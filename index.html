@@ -482,6 +482,21 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
 .tmpi{position:relative}
 .tmpl{position:absolute;left:14px;top:14px;z-index:4;font-size:11px;font-weight:500;line-height:1;color:#fff;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:999px;letter-spacing:-.01em;pointer-events:none;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-style:normal}
 .th .tmpl{left:5px;top:5px;font-size:9px;padding:3px 6px}
+.scan{position:relative;background:#eceeef}
+.scan video,.scan canvas,.scan svg{position:absolute;left:0;top:0;width:100%;height:100%}
+.scan video{object-fit:cover;object-position:50% 0}
+.scan canvas{pointer-events:none}
+.scan svg{pointer-events:none;font-family:ui-monospace,"SF Mono",Menlo,monospace}
+.scan .bx{fill:none;stroke:#8f8f8f;stroke-width:1;vector-effect:non-scaling-stroke;transition:opacity .08s}
+.scan .bx.r{stroke:var(--red)}
+.scan .lk{stroke:#a8a8a8;stroke-width:1;vector-effect:non-scaling-stroke;fill:none}
+.scan .pt{fill:#fff;stroke:#8f8f8f;stroke-width:1;vector-effect:non-scaling-stroke}
+.scan text{font-size:15px;fill:#6f6f6f;letter-spacing:.04em}
+.scan text .h{fill:#323232;font-weight:500}
+.scan text.lt{fill:rgba(255,255,255,.72)}.scan text.lt .h{fill:#fff}.scan text.r .h{fill:#ff3b30}
+.scan .cg{opacity:0;transition:opacity .5s}
+.scan.on .cg{opacity:1}
+.scan .cg:nth-of-type(2){transition-delay:.15s}.scan .cg:nth-of-type(3){transition-delay:.3s}.scan .cg:nth-of-type(4){transition-delay:.45s}.scan .cg:nth-of-type(5){transition-delay:.6s}
 </style>
 </head>
 <body>
@@ -637,7 +652,23 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
     <p class="eb rv c">Recovery Order</p>
     <h2 class="t1 rv c">순서를 찾으려면,<br>먼저 내 몸을 알아야 합니다.</h2>
     <p class="tx rv c" style="margin-top:12px">메디컬오는 증상을 덮는 대신<br>피로가 시작된 자리부터 찾습니다.</p>
-    <div class="ib-img rv tmpi"><i class="tmpl" aria-hidden="true">임시 이미지</i><img src="images/break-gel.jpg" alt="" id="ibImg"></div>
+    <div class="ib-img rv scan" id="scan">
+      <video src="video/scan.mp4" poster="images/scan-poster.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <canvas></canvas>
+      <svg viewBox="0 0 720 900" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+        <path class="lk" d="M370 190V430L385 745M370 430L150 650M370 430L610 715"/>
+        <g class="cg"><rect class="bx" x="228" y="48" width="286" height="290"/><circle class="pt" cx="370" cy="190" r="4"/>
+          <text x="44" y="70"><tspan class="h">SCAN 01 / HEAD</tspan><tspan x="44" dy="19">AUTONOMIC · HRV</tspan><tspan x="44" dy="19" data-n>0.82</tspan><tspan x="44" dy="19">SLEEP ▸ 06:12</tspan></text></g>
+        <g class="cg"><rect class="bx" x="292" y="352" width="156" height="150"/><circle class="pt" cx="370" cy="430" r="4"/>
+          <text x="470" y="372"><tspan class="h">SCAN 02 / NECK</tspan><tspan x="470" dy="19">CORTISOL</tspan><tspan x="470" dy="19" data-n>0.47</tspan></text></g>
+        <g class="cg"><rect class="bx" x="62" y="566" width="182" height="190"/><circle class="pt" cx="150" cy="650" r="4"/>
+          <text class="lt" x="62" y="790"><tspan class="h">SCAN 03 / BODY</tspan><tspan x="62" dy="19">ENERGY · FERRITIN</tspan><tspan x="62" dy="19" data-n>0.63</tspan></text></g>
+        <g class="cg"><rect class="bx r" x="262" y="612" width="250" height="250"/><circle class="pt" cx="385" cy="745" r="4" style="stroke:var(--red)"/>
+          <text class="r lt" x="276" y="640"><tspan class="h">CIRCULATION</tspan><tspan x="276" dy="19">hs-CRP · VIT-D</tspan><tspan x="276" dy="19" data-n>0.91</tspan></text></g>
+        <g class="cg"><rect class="bx" x="540" y="640" width="146" height="200"/><circle class="pt" cx="610" cy="715" r="4"/>
+          <text class="lt" x="540" y="604"><tspan class="h">FOLLOW-UP</tspan><tspan x="540" dy="19">4W ▸ RE-TEST</tspan></text></g>
+      </svg>
+    </div>
   </section>
 
   <!-- 5. CHECK (QUIZ) -->
@@ -984,7 +1015,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   function onScroll(){ticking=false;var vh=innerHeight,doc=document.documentElement,max=doc.scrollHeight-vh;
     prog.style.transform='scaleX('+(max>0?scrollY/max:0)+')';
     hl.forEach(function(s){s.classList.toggle('on',s.getBoundingClientRect().top<vh*.6)});
-    stackFx();lineFill(tl,tis);par(tlImg);par(ibImg);par(clImg);
+    stackFx();lineFill(tl,tis);par(tlImg);par(clImg);
     fbar.classList.toggle('show',hero.getBoundingClientRect().bottom<vh*.35 && $('.closing').getBoundingClientRect().top>vh*.6);
   }
   addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
@@ -1005,6 +1036,42 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   [m,vm].forEach(function(el){el.addEventListener('click',function(e){if(e.target===el||e.target.hasAttribute('data-close'))closeSheet(el)})});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeSheet(m);closeSheet(vm)}});
   form.addEventListener('submit',function(e){e.preventDefault();/* TODO: 접수 연동 (구글시트 / CRM / 알림톡) */form.style.display='none';done.style.display='block'});
+})();
+
+/* SCAN VIDEO: glitch + callouts */
+(function(){
+  var box=document.getElementById('scan'); if(!box) return;
+  var v=box.querySelector('video'), cv=box.querySelector('canvas'), cx=cv.getContext('2d');
+  var bxs=[].slice.call(box.querySelectorAll('.bx')), nums=[].slice.call(box.querySelectorAll('[data-n]'));
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vis=false, burstUntil=0, nextBurst=0, raf=0, lastNum=0, lastJump=0;
+  function size(){var r=box.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);cv.width=r.width*d;cv.height=r.height*d}
+  size(); addEventListener('resize',size);
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function frame(t){
+    raf=requestAnimationFrame(frame);
+    var W=cv.width,H=cv.height,s=W/720; cx.clearRect(0,0,W,H);
+    if(t>nextBurst){burstUntil=t+rnd(280,620);nextBurst=t+rnd(1800,3400)}
+    var burst=t<burstUntil, n=burst?Math.round(rnd(6,14)):(Math.random()<.07?1:0);
+    if(v.readyState>=2&&n){
+      for(var i=0;i<n;i++){
+        var sy=rnd(40,900),h=burst?rnd(4,46):rnd(2,10),dx=(Math.random()<.5?-1:1)*rnd(burst?12:4,burst?70:18)*s;
+        cx.drawImage(v,0,sy,720,h,dx,sy*s,W,h*s);
+        if(burst&&Math.random()<.45){ /* horizontal smear */
+          var sx=rnd(230,500),sw=rnd(80,260)*s;cx.globalAlpha=.85;
+          cx.drawImage(v,sx,sy,3,h,sx*s+(dx>0?0:-sw),sy*s,sw,h*s);cx.globalAlpha=1}
+      }
+      if(burst&&Math.random()<.35){cx.globalAlpha=.22;cx.drawImage(v,0,0,720,900,rnd(-14,14)*s,0,W,900*s);cx.globalAlpha=1} /* ghost */
+    }
+    if(t-lastNum>120){lastNum=t;nums.forEach(function(e){e.textContent=Math.random().toFixed(2)})}
+    if(t-lastJump>(burst?60:420)){lastJump=t;bxs.forEach(function(b){
+      b.style.opacity=Math.random()<(burst?.35:.06)?0:1;
+      b.style.transform=burst&&Math.random()<.5?'translate('+rnd(-8,8).toFixed(1)+'px,'+rnd(-5,5).toFixed(1)+'px)':''})}
+  }
+  function start(){if(reduce)return;v.play().catch(function(){});if(!raf)raf=requestAnimationFrame(frame)}
+  function stop(){v.pause();cancelAnimationFrame(raf);raf=0}
+  new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis){box.classList.add('on');start()}else stop()},{threshold:.2}).observe(box);
+  if(reduce)box.classList.add('on');
 })();
 </script>
 </body>
