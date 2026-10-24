@@ -424,8 +424,8 @@ details summary::-webkit-details-marker{display:none}
 /* ===== CLOSING ===== */
 .closing{position:relative;padding:0;overflow:hidden}
 .closing .bg{position:relative;aspect-ratio:3/4.2;overflow:hidden}
-.closing .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);transition:transform .1s linear}
-.closing .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.65))}
+.closing .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.closing .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 34%,rgba(0,0,0,.4) 55%,rgba(0,0,0,.72))}
 .closing .in{position:absolute;left:0;right:0;bottom:0;padding:0 var(--pad) 34px;color:#fff}
 .closing .t1{font-weight:400}
 .closing p{margin:10px 0 22px;font-size:15px;opacity:.8}
@@ -489,7 +489,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
 .mods{padding-top:44px;border-top:1px solid #e5e5e5}
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
 .mc{position:relative;background:#f5f5f5;border-radius:22px;padding:16px 14px 20px;text-align:center}
-.mc .vb{position:absolute;left:12px;top:12px;font-size:11px;line-height:1;color:var(--ink);border:1px solid #dcdcdc;background:#fff;border-radius:999px;padding:5px 8px}
+.mc .vb{position:absolute;z-index:2;left:12px;top:12px;font-size:11px;line-height:1;color:var(--ink);border:1px solid #dcdcdc;background:#fff;border-radius:999px;padding:5px 8px}
 .mc svg{display:block;width:100%;max-width:120px;height:auto;margin:14px auto 8px;overflow:visible}
 .mc svg g{transform-box:fill-box;transform-origin:center;animation:mh 4.5s ease-in-out infinite}
 .mc:nth-child(3n+2) svg g{animation-delay:-1.5s}.mc:nth-child(3n) svg g{animation-delay:-3s}
@@ -499,13 +499,13 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
 .mc p{margin:6px 0 0;font-size:12.5px;line-height:1.55;color:var(--sub)}
 .mc.wide{grid-column:1 / -1;display:grid;grid-template-columns:42% 1fr;align-items:center;text-align:left;padding:18px 18px 18px 10px}
 .mc.wide svg{margin:10px auto}
-.mc .mv{display:block;width:100%;max-width:120px;height:auto;margin:14px auto 8px;overflow:visible}
-.mc .mv g{animation:none}
-.mc .mp{width:120px;height:100px;margin:14px auto 8px;display:flex;align-items:center;justify-content:center}
-.mc .mp img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.08) contrast(1.04)}
-.mc .mp.fade img{object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
-.mc .mp.tall img{object-fit:cover;object-position:50% 20%;width:70px;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
-.mc .mp.orb img{width:92px;height:92px;object-fit:cover;object-position:50% 30%;border-radius:50%;mix-blend-mode:normal}
+.mc .mi{display:block;width:120px;height:120px;margin:10px auto 6px;animation:mf 5s ease-in-out infinite}
+.mc:nth-child(3n+2) .mi{animation-delay:-1.7s}.mc:nth-child(3n) .mi{animation-delay:-3.4s}
+.mc.wide .mi{margin:4px auto}
+@keyframes mf{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.nw{white-space:nowrap}
+h1,h2,h3,summary,figcaption,.cs-n,.qtext{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
 </style>
 </head>
 <body>
@@ -543,17 +543,17 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
       <span>7시간을 자도</span>
       <span>개운하지 않다면.</span>
     </p>
-    <p class="ans rv">의지가 약해서가 아닙니다.<br>몸이 회복하는 <b>순서가 꼬여 있는 것</b>일 수 있어요.</p>
+    <p class="ans rv">의지가 약해서가 아닙니다.<br>몸이 회복하는 <b>순서가<br>꼬여 있는 것</b>일 수 있어요.</p>
   </section>
 
   <!-- QUICK LOOK -->
   <section class="blk" id="quick">
     <div class="sl-hd"><div><h2 class="t1 rv">바로 알아보기</h2><p class="sub rv">핵심만 먼저 살펴볼까요.</p></div><div class="arw"><button type="button" data-dir="-1" aria-label="이전">←</button><button type="button" data-dir="1" aria-label="다음">→</button></div></div>
     <div class="sl">
-      <figure class="qk tmpi"><i class="tmpl" aria-hidden="true">임시 이미지</i><img src="images/hero.jpg" alt="" style="object-position:28% 50%"><figcaption><small>01</small><b>쉬어도 피곤한 이유</b>피로는 순서대로 쌓입니다</figcaption></figure>
-      <figure class="qk"><img src="images/qk-measure.jpg?v=2" alt="" style="object-position:50% 0"><figcaption><small>02</small><b>처방보다 측정이 먼저</b>혈액 · 자율신경 · 체성분 + 한의 변증</figcaption></figure>
-      <figure class="qk tmpi"><i class="tmpl" aria-hidden="true">임시 이미지</i><img src="images/qk-space.jpg" alt="" style="object-position:40% 50%"><figcaption><small>03</small><b>의원 + 한의원, 한 번에</b>한 건물에서 하루에 진료부터 처방까지</figcaption></figure>
-      <figure class="qk tmpi"><i class="tmpl" aria-hidden="true">임시 이미지</i><img src="images/subscribe.jpg" alt=""><figcaption><small>04</small><b>4주마다 다시 확인</b>같은 검사로 변화를 숫자로 비교</figcaption></figure>
+      <figure class="qk"><img src="images/qk-rest2.jpg" alt="" style="object-position:50% 0"><figcaption><small>01</small><b>쉬어도 피곤한 이유</b>피로는 순서대로 쌓입니다</figcaption></figure>
+      <figure class="qk"><img src="images/qk-blood.jpg" alt="" style="object-position:50% 40%"><figcaption><small>02</small><b>처방보다 측정이 먼저</b>혈액 · 자율신경 · 체성분 + 한의 변증</figcaption></figure>
+      <figure class="qk"><img src="images/qk-lobby.jpg" alt=""><figcaption><small>03</small><b>의원 + 한의원, 한 번에</b>한 건물에서 하루에,<br>진료부터 처방까지</figcaption></figure>
+      <figure class="qk"><img src="images/qk-recheck3.jpg" alt=""><figcaption><small>04</small><b>4주마다 다시 확인</b>같은 검사로 변화를 숫자로 비교</figcaption></figure>
     </div>
   </section>
 
@@ -581,7 +581,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   <animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;1;1;.35;0;0" keyTimes="0;.1;.45;.75;.9;1"/>
 </circle>
 <circle r="2.6" fill="#323232"><animateMotion dur="8s" begin="0s" repeatCount="indefinite" path="M80,150 C150,150 170,82 250,82 L345,82" keyPoints="0;0.66;0.71;0.71;0" keyTimes="0;0.45;0.72;0.92;1" calcMode="spline" keySplines=".35 0 .2 1;.5 0 .5 1;0 0 1 1;0 0 1 1"/><animate attributeName="opacity" dur="8s" begin="0s" repeatCount="indefinite" values="0;1;1;.3;0;0" keyTimes="0;.1;.45;.75;.9;1"/></circle><circle r="2.6" fill="#323232"><animateMotion dur="8s" begin="-1.2s" repeatCount="indefinite" path="M80,150 C150,150 170,82 250,82 L345,82" keyPoints="0;0.66;0.71;0.71;0" keyTimes="0;0.45;0.72;0.92;1" calcMode="spline" keySplines=".35 0 .2 1;.5 0 .5 1;0 0 1 1;0 0 1 1"/><animate attributeName="opacity" dur="8s" begin="-1.2s" repeatCount="indefinite" values="0;1;1;.3;0;0" keyTimes="0;.1;.45;.75;.9;1"/></circle><circle r="2.6" fill="#323232"><animateMotion dur="8s" begin="0s" repeatCount="indefinite" path="M80,150 L345,150" keyPoints="0;0.62;0.67;0.67;0" keyTimes="0;0.45;0.72;0.92;1" calcMode="spline" keySplines=".35 0 .2 1;.5 0 .5 1;0 0 1 1;0 0 1 1"/><animate attributeName="opacity" dur="8s" begin="0s" repeatCount="indefinite" values="0;1;1;.3;0;0" keyTimes="0;.1;.45;.75;.9;1"/></circle><circle r="2.6" fill="#323232"><animateMotion dur="8s" begin="-1.2s" repeatCount="indefinite" path="M80,150 L345,150" keyPoints="0;0.62;0.67;0.67;0" keyTimes="0;0.45;0.72;0.92;1" calcMode="spline" keySplines=".35 0 .2 1;.5 0 .5 1;0 0 1 1;0 0 1 1"/><animate attributeName="opacity" dur="8s" begin="-1.2s" repeatCount="indefinite" values="0;1;1;.3;0;0" keyTimes="0;.1;.45;.75;.9;1"/></circle><circle r="2.6" fill="#323232"><animateMotion dur="8s" begin="0s" repeatCount="indefinite" path="M80,150 C150,150 170,218 250,218 L345,218" keyPoints="0;0.66;0.71;0.71;0" keyTimes="0;0.45;0.72;0.92;1" calcMode="spline" keySplines=".35 0 .2 1;.5 0 .5 1;0 0 1 1;0 0 1 1"/><animate attributeName="opacity" dur="8s" begin="0s" repeatCount="indefinite" values="0;1;1;.3;0;0" keyTimes="0;.1;.45;.75;.9;1"/></circle><circle r="2.6" fill="#323232"><animateMotion dur="8s" begin="-1.2s" repeatCount="indefinite" path="M80,150 C150,150 170,218 250,218 L345,218" keyPoints="0;0.66;0.71;0.71;0" keyTimes="0;0.45;0.72;0.92;1" calcMode="spline" keySplines=".35 0 .2 1;.5 0 .5 1;0 0 1 1;0 0 1 1"/><animate attributeName="opacity" dur="8s" begin="-1.2s" repeatCount="indefinite" values="0;1;1;.3;0;0" keyTimes="0;.1;.45;.75;.9;1"/></circle></svg></div>
-          <p>오래 앉아 있고 긴장한 날이 이어지면, 산소와 영양이 몸 끝까지 닿지 못해요.</p>
+          <p>오래 앉아 있고 긴장한 날이 이어지면,<br>산소와 영양이 몸 끝까지 닿지 못해요.</p>
           <div class="sym"><span>오후 처짐</span><span>어깨 뭉침</span><span>머리가 멍함</span></div>
         </div>
       </article>
@@ -596,7 +596,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   <circle cx="200" cy="150" r="66" stroke-width="1" pathLength="100" stroke-linecap="round"><animate attributeName="stroke-dasharray" dur="8s" repeatCount="indefinite" values="0 100;6 100;18 100;26 100;100 0" keyTimes="0;.15;.5;.88;1"/></circle>
 </g>
 <circle cx="296" cy="150" r="2.2" fill="#e2563f"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;.9;.9;0" keyTimes="0;0.22;0.28;.88;1"/></circle><circle cx="200" cy="54" r="2.2" fill="#e2563f"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;.9;.9;0" keyTimes="0;0.3;0.36;.88;1"/></circle><circle cx="132" cy="218" r="2.2" fill="#e2563f"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;.9;.9;0" keyTimes="0;0.38;0.44;.88;1"/></circle><circle cx="268" cy="218" r="2.2" fill="#e2563f"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;.9;.9;0" keyTimes="0;0.46;0.52;.88;1"/></circle><circle cx="118" cy="108" r="2.2" fill="#e2563f"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;.9;.9;0" keyTimes="0;0.54;0.6000000000000001;.88;1"/></circle><circle cx="254" cy="70" r="2.2" fill="#e2563f"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;.9;.9;0" keyTimes="0;0.6;0.6599999999999999;.88;1"/></circle><circle cx="200" cy="246" r="2.2" fill="#e2563f"><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="0;0;.9;.9;0" keyTimes="0;0.66;0.72;.88;1"/></circle><circle cx="200" cy="150" r="3" fill="#323232"/></svg></div>
-          <p>잠이 모자라면 밤사이 회복이 하루의 손상을 따라가지 못해요.</p>
+          <p>잠이 모자라면 밤사이 회복이<br>하루의 손상을 따라가지 못해요.</p>
           <div class="sym"><span>자도 피곤</span><span>잦은 잔병치레</span><span>푸석한 피부</span></div>
         </div>
       </article>
@@ -616,7 +616,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
 </g>
 <circle cx="200" cy="150" r="78" fill="url(#og3)"><animate attributeName="r" dur="8s" repeatCount="indefinite" values="78;78;30;30;78" keyTimes="0;.12;.82;.9;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .6 1;0 0 1 1;.4 0 .2 1"/><animate attributeName="opacity" dur="8s" repeatCount="indefinite" values="1;1;.45;.45;1" keyTimes="0;.12;.82;.9;1"/></circle>
 <circle cx="200" cy="150" r="3" fill="#323232"/></svg></div>
-          <p>결국 몸이 쓸 원료 자체가 부족해져요. 쉬어도 채워지지 않는 단계예요.</p>
+          <p>결국 몸이 쓸 원료 자체가 부족해져요.<br>쉬어도 채워지지 않는 단계예요.</p>
           <div class="sym"><span>아침부터 무기력</span><span>손발 차가움</span><span>의욕 저하</span></div>
         </div>
       </article>
@@ -633,7 +633,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   <section class="blk" id="compare" style="padding-bottom:0">
     <p class="eb rv">그래서</p>
     <h2 class="t2 rv">보약도, 수액도<br><em>며칠 좋다 마는 이유</em></h2>
-    <p class="tx rv">길이 막힌 채로 연료만 넣으면, 넣은 만큼 쓰이지 못하고 금방 원래대로 돌아와요.</p>
+    <p class="tx rv">길이 막힌 채로 연료만 넣으면,<br>넣은 만큼 쓰이지 못하고<br>금방 원래대로 돌아와요.</p>
 
     <div class="cmp rv" id="cmp">
       <div class="seg" id="cmpSeg"><i></i><button class="on" data-k="a">연료만 채우면</button><button data-k="b">순서대로 풀면</button></div>
@@ -652,7 +652,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
         <div class="gauge"><span>에너지</span><i data-g="e"></i></div>
       </div>
       <p class="cap" id="cmpCap"></p>
-      <p class="fine" style="margin-top:6px">* 이해를 돕기 위한 예시 그림이며, 실제 효과를 나타내지 않습니다.</p>
+      <p class="fine" style="margin-top:6px">* 이해를 돕기 위한 예시 그림이며,<br>실제 효과를 나타내지 않습니다.</p>
     </div>
   </section>
 
@@ -700,7 +700,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   <section class="blk" id="report">
     <p class="eb rv">처방보다 측정이 먼저</p>
     <h2 class="t2 rv">느낌이 아니라,<br>숫자로 시작합니다.</h2>
-    <p class="tx rv">첫 방문에 검사를 하고, 결과를 <b>한 장의 리포트</b>로 설명드려요. 4주 뒤 같은 검사로 다시 재서 비교합니다.</p>
+    <p class="tx rv">첫 방문에 검사를 하고,<br>결과를 <b>한 장의 리포트</b>로 설명드려요.<br>4주 뒤 같은 검사로 다시 재서 비교합니다.</p>
 
     <div class="rep rv" id="rep">
       <div class="rep-hd">
@@ -710,7 +710,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
       <div class="rep-row"><div class="top"><span>순환 · 자율신경(HRV)</span><em data-r="c">-</em></div><div class="meter"><i data-m="c"></i><s data-m="c"></s></div></div>
       <div class="rep-row"><div class="top"><span>회복 · 염증 지표</span><em data-r="r">-</em></div><div class="meter"><i data-m="r"></i><s data-m="r"></s></div></div>
       <div class="rep-row"><div class="top"><span>에너지 · 체성분·영양</span><em data-r="e">-</em></div><div class="meter"><i data-m="e"></i><s data-m="e"></s></div></div>
-      <p class="fine">* 리포트 형식을 보여드리기 위한 예시이며, 실제 수치가 아닙니다.</p>
+      <p class="fine">* 리포트 형식을 보여드리기 위한 예시이며,<br>실제 수치가 아닙니다.</p>
     </div>
 
   </section>
@@ -720,11 +720,11 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
     <div class="sl-hd"><div><p class="eb rv">의과 + 한의과</p><h2 class="t2 rv">누가 진료하나요?</h2></div><div class="arw"><button type="button" data-dir="-1" aria-label="이전">←</button><button type="button" data-dir="1" aria-label="다음">→</button></div></div>
     <div class="sl">
       <article class="dr"><img src="images/dr-kor.jpg" alt="장동훈 대표원장"><div class="dr-b"><b>장동훈 대표원장</b><span>메디컬오 한의원 압구정점 대표 원장</span><ul><li>(주) 메디컬오 대표이사</li><li>신물질연구학회 회장</li><li>세명대 한의과대학 졸업</li></ul></div></article>
-      <article class="dr"><img src="images/dr-med.jpg" alt="구본준 원장"><div class="dr-b"><b>구본준 원장</b><span>성형외과 전문의</span><ul><li>메디컬오 의원 압구정점 시술대표 원장</li><li>대한성형외과학회 정회원</li><li>대한두개안면성형외과학회 정회원</li></ul></div></article>
+      <article class="dr"><img src="images/dr-med.jpg" alt="구본준 원장"><div class="dr-b"><b>구본준 원장</b><span>성형외과 전문의</span><ul><li>메디컬오 의원 압구정점<br>시술대표 원장</li><li>대한성형외과학회 정회원</li><li>대한두개안면성형외과학회 정회원</li></ul></div></article>
     </div>
     <div class="one">
       <h3 class="t2 rv">세 개의 진료가,<br>하나의 리포트로 순서를 정합니다.</h3>
-      <p class="tx rv">의과 원장, 한의과 원장, 회복 코디네이터가 <b>한 사람의 결과를 함께 읽습니다.</b> 수치로 보이는 결핍과 체질로 읽히는 패턴을 한 장에 정리한 뒤에 세 단계의 비중을 정합니다.</p>
+      <p class="tx rv">의과 원장, 한의과 원장, 회복 코디네이터가<br><b>한 사람의 결과를 함께 읽습니다.</b><br>수치로 보이는 결핍과 체질로 읽히는 패턴을<br>한 장에 정리한 뒤에 세 단계의 비중을 정합니다.</p>
       <figure class="venn rv" aria-label="한의과 진료, 회복 코디네이터, 의과 진료가 겹치는 자리에서 One Report">
         <svg viewBox="0 0 384 420" role="img">
           <defs>
@@ -747,7 +747,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
           <g class="rp"><text text-anchor="middle"><tspan class="k" x="192" y="386">One Report</tspan><tspan class="d" x="192" dy="21">세 시선이 겹치는 자리에서 순서를 정합니다</tspan></text></g>
         </svg>
       </figure>
-      <div class="rd-list"><div class="rd rv"><small>BLOOD</small><b>혈액</b><p>일반혈액·간·신장 기능, 갑상선(TSH·fT4), 코르티솔, 페리틴, 비타민 D, 호모시스테인, hs-CRP</p><strong>회복 · 에너지를 읽습니다</strong></div><div class="rd rv"><small>NERVOUS</small><b>자율신경</b><p>심박변이도(HRV) 자율신경 균형 검사, 수면 패턴 문진</p><strong>순환의 신호를 읽습니다</strong></div><div class="rd rv"><small>BODY</small><b>몸</b><p>체성분·기초대사량, 혈압·산소포화도</p><strong>순환 · 에너지를 읽습니다</strong></div><div class="rd rv"><small>CONSTITUTION</small><b>변증</b><p>간울·심화·비허·폐약·신허, 다섯 유형으로 피로의 결을 읽습니다</p><strong>세 단계의 체질 배경</strong></div><div class="rd rv last"><small>FOLLOW-UP</small><b>4주 뒤 같은 검사</b><p>1주차와 4주차 같은 항목을 다시 검사해 변화를 수치로 확인합니다</p><strong>느낌이 아니라 숫자로 끝냅니다</strong></div></div>
+      <div class="rd-list"><div class="rd rv"><small>BLOOD</small><b>혈액</b><p>일반혈액·간·신장 기능, 갑상선(TSH·fT4),<br>코르티솔, 페리틴, 비타민 D,<br>호모시스테인, <span class="nw">hs-CRP</span></p><strong>회복 · 에너지를 읽습니다</strong></div><div class="rd rv"><small>NERVOUS</small><b>자율신경</b><p>심박변이도(HRV) 자율신경 균형 검사,<br>수면 패턴 문진</p><strong>순환의 신호를 읽습니다</strong></div><div class="rd rv"><small>BODY</small><b>몸</b><p>체성분·기초대사량, 혈압·산소포화도</p><strong>순환 · 에너지를 읽습니다</strong></div><div class="rd rv"><small>CONSTITUTION</small><b>변증</b><p>간울·심화·비허·폐약·신허,<br>다섯 유형으로 피로의 결을 읽습니다</p><strong>세 단계의 체질 배경</strong></div><div class="rd rv last"><small>FOLLOW-UP</small><b>4주 뒤 같은 검사</b><p>1주차와 4주차 같은 항목을 다시 검사해<br>변화를 수치로 확인합니다</p><strong>느낌이 아니라 숫자로 끝냅니다</strong></div></div>
     </div>
   </section>
 
@@ -755,7 +755,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   <section class="blk" id="program">
     <p class="eb rv">회복의 순서</p>
     <h2 class="t2 rv">뚫고, 고치고, 채웁니다.</h2>
-    <p class="tx rv">단계마다 대표 처방 하나. 비중은 리포트를 보고 원장이 정합니다.</p>
+    <p class="tx rv">단계마다 대표 처방 하나.<br>비중은 리포트를 보고 정합니다.</p>
 
     <div class="ptabs"><div class="seg" id="pSeg"><i></i><button class="on" data-p="0">01 뚫는다</button><button data-p="1">02 고친다</button><button data-p="2">03 채운다</button></div></div>
     <div class="pimg" id="pImg">
@@ -768,48 +768,45 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
       <div class="pp on">
         <span class="verb">순환 · 막힌 길부터 엽니다</span>
         <h3>활성 자가혈 정맥주사</h3>
-        <p class="q">길이 막혀 있으면 좋은 걸 넣어도 닿지 않아요. 본인 혈액에서 활성화한 성분을 정맥으로 되돌려, <b>순환의 길을 여는 첫 단계</b>입니다.</p>
+        <p class="q">길이 막혀 있으면 좋은 걸 넣어도 닿지 않아요.<br>본인 혈액에서 활성화한 성분을 정맥으로 되돌려,<br><b>순환의 길을 여는 첫 단계</b>입니다.</p>
         <dl class="kv"><div><dt>방법</dt><dd>본인 혈액 60cc · 30분~1시간 링거</dd></div><div><dt>횟수</dt><dd>월 1회</dd></div></dl>
         <details class="more"><summary>이런 분께 추천해요<i></i></summary><div class="mb"><p><span>대상</span>하루 8시간 이상 앉아 있는 분, 오후에 급격히 처지는 분</p><p><span>관련 검사</span>HRV · 혈압 · 산소포화도</p></div></details>
       </div>
       <div class="pp">
         <span class="verb">회복 · 밀린 수리를 끝냅니다</span>
         <h3>micro PDRN 약침</h3>
-        <p class="q">PDRN은 <b>세포 재생 신호를 돕고 과한 염증 반응을 낮추는</b> 것으로 알려진 소재예요. 피로가 먼저 쌓이는 경혈에 미세 용량으로 놓습니다.</p>
+        <p class="q">PDRN은 <b>세포 재생 신호를 돕고<br>과한 염증 반응을 낮추는</b> 것으로 알려진 소재예요.<br>피로가 먼저 쌓이는 경혈에<br>미세 용량으로 놓습니다.</p>
         <dl class="kv"><div><dt>방법</dt><dd>목·어깨·두피 경혈 · 정맥주사와 같은 날</dd></div><div><dt>횟수</dt><dd>BASIC 월 1회 · PREMIUM 월 2회</dd></div></dl>
         <details class="more"><summary>이런 분께 추천해요<i></i></summary><div class="mb"><p><span>대상</span>야근·육아·교대근무로 잠이 쪼개진 분, 근육통·피부 트러블이 함께 오는 분</p><p><span>관련 검사</span>hs-CRP · 간 기능 · 페리틴</p></div></details>
       </div>
       <div class="pp">
         <span class="verb">에너지 · 빈 창고를 채웁니다</span>
         <h3>공진단 <small style="font-size:15px;color:var(--sub);font-weight:400">+ 회복 수액</small></h3>
-        <p class="q">길이 열리고 수리가 끝난 뒤에야 <b>채운 만큼 쓰입니다.</b> 체질 진단 후 복용 간격을 정하고, PREMIUM은 회복 수액이 더해집니다.</p>
+        <p class="q">길이 열리고 수리가 끝난 뒤에야<br><b>채운 만큼 쓰입니다.</b><br>체질 진단 후 복용 간격을 정하고,<br>PREMIUM은 회복 수액이 더해집니다.</p>
         <dl class="kv"><div><dt>방법</dt><dd>한방 복용 · 변증 후 간격 설계</dd></div><div><dt>횟수</dt><dd>BASIC 1환 · PREMIUM 10환 + 수액 1회</dd></div></dl>
         <details class="more"><summary>이런 분께 추천해요<i></i></summary><div class="mb"><p><span>대상</span>과로가 오래 쌓인 40~50대, 손발이 차고 아침 기상이 유독 힘든 분</p><p><span>관련 검사</span>갑상선 · 비타민 D · 코르티솔 · 체성분</p></div></details>
       </div>
     </div>
-    <p class="fine">* 모든 처방은 의사·한의사의 진단 후 적응증에 따라 결정되며, 개인에 따라 효과와 반응이 다를 수 있습니다.</p>
+    <p class="fine">* 모든 처방은 의사·한의사의 진단 후 적응증에 따라 결정되며,<br>개인에 따라 효과와 반응이 다를 수 있습니다.</p>
   </section>
 
   <!-- MODULES -->
   <section class="blk" id="modules" style="padding-top:0">
     <div class="mods">
-      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-        <radialGradient id="mhG" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#ff1a1a"/><stop offset=".55" stop-color="#ff4d6d"/><stop offset="1" stop-color="#ff9a8a"/></radialGradient>
-        <filter id="mhB" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.2"/></filter>
-      </defs></svg>
+      
       <p class="eb rv">부위별 모듈</p>
       <h3 class="t2 rv">남아 있는 불편함은,<br>부위별로 더합니다.</h3>
-      <p class="tx rv">세 단계 처방 위에 필요한 부위만 더합니다. <b>어떤 모듈을 더할지는 리포트를 보고 원장이 정합니다.</b></p>
+      <p class="tx rv">세 단계 처방 위에 필요한 부위만 더합니다.<br><b>어떤 모듈을 더할지는<br>리포트를 보고 제안합니다.</b></p>
       <div class="mgrid">
-        <div class="mc rv"><span class="vb">고친다</span><svg class="mv" viewBox="0 0 120 100" aria-hidden="true"><g><rect x="35.5" y="15" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="42.5" y="15" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="49.5" y="15" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="56.5" y="15" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="63.5" y="15" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="70.5" y="15" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="77.5" y="15" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="28.5" y="22" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="35.5" y="22" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="42.5" y="22" width="7" height="7" fill="#9cc8ea" opacity="0.34"/><rect x="49.5" y="22" width="7" height="7" fill="#9cc8ea" opacity="0.37"/><rect x="56.5" y="22" width="7" height="7" fill="#9cc8ea" opacity="0.38"/><rect x="63.5" y="22" width="7" height="7" fill="#9cc8ea" opacity="0.37"/><rect x="70.5" y="22" width="7" height="7" fill="#9cc8ea" opacity="0.34"/><rect x="77.5" y="22" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="84.5" y="22" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="21.5" y="29" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="28.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.40"/><rect x="35.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.46"/><rect x="42.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.50"/><rect x="49.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.52"/><rect x="56.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.53"/><rect x="63.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.52"/><rect x="70.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.50"/><rect x="77.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.46"/><rect x="84.5" y="29" width="7" height="7" fill="#9cc8ea" opacity="0.40"/><rect x="91.5" y="29" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="14.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.39"/><rect x="21.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.53"/><rect x="28.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.60"/><rect x="35.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.64"/><rect x="42.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.66"/><rect x="49.5" y="36" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="56.5" y="36" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="63.5" y="36" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="70.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.66"/><rect x="77.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.64"/><rect x="84.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.60"/><rect x="91.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.53"/><rect x="98.5" y="36" width="7" height="7" fill="#9cc8ea" opacity="0.39"/><rect x="7.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.58"/><rect x="14.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.73"/><rect x="21.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.78"/><rect x="28.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.80"/><rect x="35.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.81"/><rect x="42.5" y="43" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="49.5" y="43" width="7" height="7" fill="#2f7fc4" opacity="1.00"/><rect x="56.5" y="43" width="7" height="7" fill="#2f7fc4" opacity="1.00"/><rect x="63.5" y="43" width="7" height="7" fill="#2f7fc4" opacity="1.00"/><rect x="70.5" y="43" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="77.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.81"/><rect x="84.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.80"/><rect x="91.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.78"/><rect x="98.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.73"/><rect x="105.5" y="43" width="7" height="7" fill="#9cc8ea" opacity="0.58"/><rect x="7.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.58"/><rect x="14.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.73"/><rect x="21.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.78"/><rect x="28.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.80"/><rect x="35.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.81"/><rect x="42.5" y="50" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="49.5" y="50" width="7" height="7" fill="#2f7fc4" opacity="1.00"/><rect x="56.5" y="50" width="7" height="7" fill="#2f7fc4" opacity="1.00"/><rect x="63.5" y="50" width="7" height="7" fill="#2f7fc4" opacity="1.00"/><rect x="70.5" y="50" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="77.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.81"/><rect x="84.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.80"/><rect x="91.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.78"/><rect x="98.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.73"/><rect x="105.5" y="50" width="7" height="7" fill="#9cc8ea" opacity="0.58"/><rect x="14.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.39"/><rect x="21.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.53"/><rect x="28.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.60"/><rect x="35.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.64"/><rect x="42.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.66"/><rect x="49.5" y="57" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="56.5" y="57" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="63.5" y="57" width="7" height="7" fill="#5fa3d8" opacity="0.95"/><rect x="70.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.66"/><rect x="77.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.64"/><rect x="84.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.60"/><rect x="91.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.53"/><rect x="98.5" y="57" width="7" height="7" fill="#9cc8ea" opacity="0.39"/><rect x="21.5" y="64" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="28.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.40"/><rect x="35.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.46"/><rect x="42.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.50"/><rect x="49.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.52"/><rect x="56.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.53"/><rect x="63.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.52"/><rect x="70.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.50"/><rect x="77.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.46"/><rect x="84.5" y="64" width="7" height="7" fill="#9cc8ea" opacity="0.40"/><rect x="91.5" y="64" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="28.5" y="71" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="35.5" y="71" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="42.5" y="71" width="7" height="7" fill="#9cc8ea" opacity="0.34"/><rect x="49.5" y="71" width="7" height="7" fill="#9cc8ea" opacity="0.37"/><rect x="56.5" y="71" width="7" height="7" fill="#9cc8ea" opacity="0.38"/><rect x="63.5" y="71" width="7" height="7" fill="#9cc8ea" opacity="0.37"/><rect x="70.5" y="71" width="7" height="7" fill="#9cc8ea" opacity="0.34"/><rect x="77.5" y="71" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="84.5" y="71" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="35.5" y="78" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="42.5" y="78" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="49.5" y="78" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="56.5" y="78" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="63.5" y="78" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="70.5" y="78" width="7" height="7" fill="#d3e6f5" opacity="0.55"/><rect x="77.5" y="78" width="7" height="7" fill="#d3e6f5" opacity="0.55"/></g></svg><small>EYE · 눈</small><b>화면 피로 · 건조</b><p>뻑뻑함, 충혈, 저녁이면 흐려지는 시야</p></div>
-        <div class="mc rv"><span class="vb">뚫는다</span><div class="mp fade"><img src="images/mod-breath.jpg" alt="" loading="lazy"></div><small>BREATH · 코·호흡기</small><b>막힌 코, 얕은 숨</b><p>비염·코막힘으로 얕아진 호흡과 수면</p></div>
-        <div class="mc rv"><span class="vb">고친다</span><svg class="mv" viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="tG" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#ff1a1a"/><stop offset=".6" stop-color="#ff4d8d"/><stop offset="1" stop-color="#ffb08a"/></radialGradient><filter id="tB" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3.6"/></filter></defs><g><path d="M44 96C46 74 40 64 40 48C40 28 50 12 66 12C80 12 88 24 86 38L92 50L86 54V60C86 68 78 70 70 68C68 78 70 88 74 96Z" fill="url(#tG)" filter="url(#tB)"/></g></svg><small>THROAT · 목·기관지</small><b>잠긴 목, 마른 기침</b><p>말을 많이 하는 직업의 만성 인후 피로</p></div>
-        <div class="mc rv"><span class="vb">채운다</span><div class="mp fade"><img src="images/mod-digest.jpg" alt="" loading="lazy"></div><small>DIGEST · 소화기</small><b>더부룩함, 식후 졸림</b><p>소화에 에너지를 다 쓰는 몸</p></div>
-        <div class="mc rv"><span class="vb">고친다</span><svg class="mv" viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gG" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#e8f06a"/><stop offset=".55" stop-color="#b9cc2a"/><stop offset="1" stop-color="#7d9a1c"/></radialGradient><filter id="gT" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="7"/></filter></defs><g filter="url(#gT)"><circle cx="70" cy="36" r="22" fill="url(#gG)"/><circle cx="46" cy="64" r="20" fill="url(#gG)"/><circle cx="78" cy="68" r="16" fill="url(#gG)"/><circle cx="50" cy="34" r="12" fill="url(#gG)"/></g></svg><small>GUT · 장</small><b>장 환경 · 면역</b><p>배변 리듬과 장 점막 회복</p></div>
-        <div class="mc rv"><span class="vb">채운다</span><div class="mp tall"><img src="images/mod-men.jpg" alt="" loading="lazy"></div><small>MEN · 남성</small><b>전립선 · 스태미나</b><p>야간뇨, 떨어진 활력</p></div>
-        <div class="mc rv"><span class="vb">고친다</span><svg class="mv" viewBox="0 0 120 100" aria-hidden="true"><defs><linearGradient id="wG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6a6d8"/><stop offset=".5" stop-color="#ff5fa2"/><stop offset="1" stop-color="#ff8a5c"/></linearGradient><filter id="wB" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter></defs><g><circle cx="52" cy="46" r="24" fill="url(#wG)" filter="url(#wB)" opacity=".9"/><circle cx="70" cy="58" r="22" fill="url(#wG)" filter="url(#wB)" opacity=".8"/></g></svg><small>WOMEN · 여성</small><b>여성 웰니스</b><p>면역과 함께 움직이는 반복 피로</p></div>
-        <div class="mc rv"><span class="vb">뚫는다</span><div class="mp orb"><img src="images/mod-sleep.jpg" alt="" loading="lazy"></div><small>SLEEP · 수면</small><b>딥 슬립</b><p>잠들기까지 30분 이상, 새벽 각성</p></div>
-        <div class="mc rv wide"><span class="vb">고친다</span><svg class="mv" viewBox="0 0 120 100" aria-hidden="true"><defs><clipPath id="sk"><path d="M60 8C68 8 72 16 78 18C86 14 96 18 96 28C96 34 104 38 104 48C104 58 96 62 96 70C96 80 86 84 78 82C72 88 68 94 60 94C52 94 48 88 42 82C34 84 24 80 24 70C24 62 16 58 16 48C16 38 24 34 24 28C24 18 34 14 42 18C48 16 52 8 60 8Z"/></clipPath></defs><image href="images/mod-skin.jpg" x="10" y="0" width="100" height="100" preserveAspectRatio="xMidYMid slice" clip-path="url(#sk)"/></svg><div><small>SKIN · 피부</small><b>스킨 웰니스</b><p>피로는 얼굴에 먼저 남습니다. 수액을 맞는 동안 피부도 함께</p></div></div>
+        <div class="mc rv"><span class="vb">고친다</span><img class="mi" src="images/mod2-eye.jpg" alt="" loading="lazy"><small>EYE · 눈</small><b>화면 피로 · 건조</b><p>뻑뻑함, 충혈,<br>저녁이면 흐려지는 시야</p></div>
+        <div class="mc rv"><span class="vb">뚫는다</span><img class="mi" src="images/mod2-breath.jpg" alt="" loading="lazy"><small>BREATH · 코·호흡기</small><b>막힌 코, 얕은 숨</b><p>비염·코막힘으로 얕아진<br>호흡과 수면</p></div>
+        <div class="mc rv"><span class="vb">고친다</span><img class="mi" src="images/mod2-throat.jpg" alt="" loading="lazy"><small>THROAT · 목·기관지</small><b>잠긴 목, 마른 기침</b><p>말을 많이 하는 직업의<br>만성 인후 피로</p></div>
+        <div class="mc rv"><span class="vb">채운다</span><img class="mi" src="images/mod2-digest.jpg" alt="" loading="lazy"><small>DIGEST · 소화기</small><b>더부룩함, 식후 졸림</b><p>소화에 에너지를<br>다 쓰는 몸</p></div>
+        <div class="mc rv"><span class="vb">고친다</span><img class="mi" src="images/mod2-gut.jpg" alt="" loading="lazy"><small>GUT · 장</small><b>장 환경 · 면역</b><p>배변 리듬과 장 점막 회복</p></div>
+        <div class="mc rv"><span class="vb">채운다</span><img class="mi" src="images/mod2-men.jpg" alt="" loading="lazy"><small>MEN · 남성</small><b>전립선 · 스태미나</b><p>야간뇨, 떨어진 활력</p></div>
+        <div class="mc rv"><span class="vb">고친다</span><img class="mi" src="images/mod2-women.jpg" alt="" loading="lazy"><small>WOMEN · 여성</small><b>여성 웰니스</b><p>면역과 함께 움직이는<br>반복 피로</p></div>
+        <div class="mc rv"><span class="vb">뚫는다</span><img class="mi" src="images/mod2-sleep.jpg" alt="" loading="lazy"><small>SLEEP · 수면</small><b>딥 슬립</b><p>잠들기까지 30분 이상,<br>새벽 각성</p></div>
+        <div class="mc rv wide"><span class="vb">고친다</span><img class="mi" src="images/mod2-skin.jpg" alt="" loading="lazy"><div><small>SKIN · 피부</small><b>스킨 웰니스</b><p>피로는 얼굴에 먼저 남습니다.<br>수액을 맞는 동안 피부도 함께</p></div></div>
       </div>
     </div>
   </section>
@@ -817,8 +814,8 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   <!-- CASES -->
   <section class="blk g" id="cases">
     <div class="sl-hd"><div><p class="eb rv">회복 사례</p><h2 class="t2 rv">숫자로 확인한<br>회복 사례</h2></div><div class="arw"><button type="button" data-dir="-1" aria-label="이전">←</button><button type="button" data-dir="1" aria-label="다음">→</button></div></div>
-    <div class="sl"><article class="cs"><div class="cs-d"><span>2026.03.04</span><span>2026.05.27</span></div><div class="cs-who"><b>40대 · 사무직</b>PREMIUM 3개월</div><div class="cs-m"><span>자율신경 균형(HRV)</span><div class="cs-v"><em>38</em><i class="cs-bar"><s style="--a:50%;--b:80%"></s></i><b>61</b></div></div><div class="cs-m"><span>염증 지표 hs-CRP</span><div class="cs-v"><em>2.4</em><i class="cs-bar"><s style="--a:91%;--b:34%"></s></i><b>0.9</b></div></div><div class="cs-m"><span>피로 자가척도 (10점)</span><div class="cs-v"><em>8</em><i class="cs-bar"><s style="--a:91%;--b:45%"></s></i><b>4</b></div></div><p class="cs-n">“오후 처짐과 수면 중 각성이 먼저 줄었어요”</p></article><article class="cs"><div class="cs-d"><span>2026.02.11</span><span>2026.05.06</span></div><div class="cs-who"><b>30대 · 교대근무</b>BASIC 3개월</div><div class="cs-m"><span>자율신경 균형(HRV)</span><div class="cs-v"><em>42</em><i class="cs-bar"><s style="--a:59%;--b:80%"></s></i><b>57</b></div></div><div class="cs-m"><span>비타민 D</span><div class="cs-v"><em>14</em><i class="cs-bar"><s style="--a:36%;--b:80%"></s></i><b>31</b></div></div><div class="cs-m"><span>피로 자가척도 (10점)</span><div class="cs-v"><em>7</em><i class="cs-bar"><s style="--a:91%;--b:52%"></s></i><b>4</b></div></div><p class="cs-n">“교대 후 회복 시간이 짧아졌어요”</p></article><article class="cs"><div class="cs-d"><span>2026.01.08</span><span>2026.07.02</span></div><div class="cs-who"><b>50대 · 자영업</b>PREMIUM 6개월</div><div class="cs-m"><span>자율신경 균형(HRV)</span><div class="cs-v"><em>29</em><i class="cs-bar"><s style="--a:45%;--b:80%"></s></i><b>52</b></div></div><div class="cs-m"><span>페리틴</span><div class="cs-v"><em>18</em><i class="cs-bar"><s style="--a:31%;--b:80%"></s></i><b>46</b></div></div><div class="cs-m"><span>피로 자가척도 (10점)</span><div class="cs-v"><em>9</em><i class="cs-bar"><s style="--a:91%;--b:30%"></s></i><b>3</b></div></div><p class="cs-n">“아침 기상과 집중 시간이 달라졌어요”</p></article></div>
-    <p class="fine">* 시안용 예시 수치입니다. 실제 사례와 동의를 받은 자료로 교체됩니다. 개인에 따라 결과는 다를 수 있습니다.</p>
+    <div class="sl"><article class="cs"><div class="cs-d"><span>2026.03.04</span><span>2026.05.27</span></div><div class="cs-who"><b>40대 · 사무직</b>PREMIUM 3개월</div><div class="cs-m"><span>자율신경 균형(HRV)</span><div class="cs-v"><em>38</em><i class="cs-bar"><s style="--a:50%;--b:80%"></s></i><b>61</b></div></div><div class="cs-m"><span>염증 지표 hs-CRP</span><div class="cs-v"><em>2.4</em><i class="cs-bar"><s style="--a:91%;--b:34%"></s></i><b>0.9</b></div></div><div class="cs-m"><span>피로 자가척도 (10점)</span><div class="cs-v"><em>8</em><i class="cs-bar"><s style="--a:91%;--b:45%"></s></i><b>4</b></div></div><p class="cs-n">“오후 처짐과 수면 중 각성이<br>먼저 줄었어요”</p></article><article class="cs"><div class="cs-d"><span>2026.02.11</span><span>2026.05.06</span></div><div class="cs-who"><b>30대 · 교대근무</b>BASIC 3개월</div><div class="cs-m"><span>자율신경 균형(HRV)</span><div class="cs-v"><em>42</em><i class="cs-bar"><s style="--a:59%;--b:80%"></s></i><b>57</b></div></div><div class="cs-m"><span>비타민 D</span><div class="cs-v"><em>14</em><i class="cs-bar"><s style="--a:36%;--b:80%"></s></i><b>31</b></div></div><div class="cs-m"><span>피로 자가척도 (10점)</span><div class="cs-v"><em>7</em><i class="cs-bar"><s style="--a:91%;--b:52%"></s></i><b>4</b></div></div><p class="cs-n">“교대 후 회복 시간이 짧아졌어요”</p></article><article class="cs"><div class="cs-d"><span>2026.01.08</span><span>2026.07.02</span></div><div class="cs-who"><b>50대 · 자영업</b>PREMIUM 6개월</div><div class="cs-m"><span>자율신경 균형(HRV)</span><div class="cs-v"><em>29</em><i class="cs-bar"><s style="--a:45%;--b:80%"></s></i><b>52</b></div></div><div class="cs-m"><span>페리틴</span><div class="cs-v"><em>18</em><i class="cs-bar"><s style="--a:31%;--b:80%"></s></i><b>46</b></div></div><div class="cs-m"><span>피로 자가척도 (10점)</span><div class="cs-v"><em>9</em><i class="cs-bar"><s style="--a:91%;--b:30%"></s></i><b>3</b></div></div><p class="cs-n">“아침 기상과 집중 시간이<br>달라졌어요”</p></article></div>
+    <p class="fine">* 시안용 예시 수치입니다.<br>실제 사례와 동의를 받은 자료로 교체됩니다.<br>개인에 따라 결과는 다를 수 있습니다.</p>
   </section>
 
   <!-- REVIEWS -->
@@ -859,11 +856,11 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
 
   <!-- 11. CLOSING -->
   <section class="closing">
-    <div class="bg tmpi"><i class="tmpl" aria-hidden="true">임시 이미지</i><img src="images/rest.jpg" alt="" id="clImg"></div>
+    <div class="bg"><img src="images/closing-stretch-b.jpg" alt="" id="clImg"></div>
     <div class="in">
       <p class="eb" style="color:#fff;opacity:.8">Rest, Your Life.</p>
       <h2 class="t1">피로를 의지가 아닌,<br>몸의 순서로 풉니다.</h2>
-      <p>상담을 남기시면 코디네이터가 24시간 안에 연락드려요.</p>
+      <p>상담을 남기시면<br>코디네이터가 24시간 안에 연락드려요.</p>
       <button class="btn red" type="button" data-open>상담 예약하기</button>
       <div class="row"><a class="btn line" href="tel:0225151073">전화 상담</a><a class="btn kakao" href="https://pf.kakao.com/_xjGnAC" target="_blank" rel="noopener">카카오톡 상담</a></div>
     </div>
@@ -877,7 +874,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   <h4>사업자 정보</h4><p>메디컬오의원 · 대표자 송민규 · 820-42-01344<br>메디컬오 한의원 · 대표자 장동훈 · 603-45-91863</p>
   <div class="disc">
     <p><b style="color:var(--ink);font-weight:500">의료광고 심의필 번호: (심의 후 기재)</b></p>
-    <p>모든 시술과 처방은 의사·한의사의 진단 후 적응증에 따라 결정되며, 개인에 따라 효과와 반응이 다를 수 있습니다. 부작용 및 주의사항은 진료 시 충분히 설명드립니다.</p>
+    <p>모든 시술과 처방은 의사·한의사의 진단 후 적응증에 따라 결정되며,<br>개인에 따라 효과와 반응이 다를 수 있습니다.<br>부작용 및 주의사항은 진료 시 충분히 설명드립니다.</p>
     <p style="margin-top:6px">Copyright © 2026 주식회사 메디컬오.</p>
   </div>
 </div></footer>
@@ -1034,7 +1031,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   function onScroll(){ticking=false;var vh=innerHeight,doc=document.documentElement,max=doc.scrollHeight-vh;
     prog.style.transform='scaleX('+(max>0?scrollY/max:0)+')';
     hl.forEach(function(s){s.classList.toggle('on',s.getBoundingClientRect().top<vh*.6)});
-    stackFx();lineFill(tl,tis);par(tlImg);par(clImg);
+    stackFx();lineFill(tl,tis);par(tlImg);
     fbar.classList.toggle('show',hero.getBoundingClientRect().bottom<vh*.35 && $('.closing').getBoundingClientRect().top>vh*.6);
   }
   addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
