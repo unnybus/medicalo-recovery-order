@@ -489,7 +489,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
 .mods{padding-top:44px;border-top:1px solid #e5e5e5}
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
 .mc{position:relative;background:#f5f5f5;border-radius:22px;padding:16px 14px 20px;text-align:center}
-.mc .vb{position:absolute;left:12px;top:12px;font-size:11px;line-height:1;color:var(--ink);border:1px solid #dcdcdc;background:#fff;border-radius:999px;padding:5px 8px}
+.mc .vb{position:absolute;z-index:2;left:12px;top:12px;font-size:11px;line-height:1;color:var(--ink);border:1px solid #dcdcdc;background:#fff;border-radius:999px;padding:5px 8px}
 .mc svg{display:block;width:100%;max-width:120px;height:auto;margin:14px auto 8px;overflow:visible}
 .mc svg g{transform-box:fill-box;transform-origin:center;animation:mh 4.5s ease-in-out infinite}
 .mc:nth-child(3n+2) svg g{animation-delay:-1.5s}.mc:nth-child(3n) svg g{animation-delay:-3s}
@@ -499,6 +499,10 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
 .mc p{margin:6px 0 0;font-size:12.5px;line-height:1.55;color:var(--sub)}
 .mc.wide{grid-column:1 / -1;display:grid;grid-template-columns:42% 1fr;align-items:center;text-align:left;padding:18px 18px 18px 10px}
 .mc.wide svg{margin:10px auto}
+.mc .mi{display:block;width:120px;height:120px;margin:10px auto 6px;animation:mf 5s ease-in-out infinite}
+.mc:nth-child(3n+2) .mi{animation-delay:-1.7s}.mc:nth-child(3n) .mi{animation-delay:-3.4s}
+.mc.wide .mi{margin:4px auto}
+@keyframes mf{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 </style>
 </head>
 <body>
@@ -786,23 +790,20 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
   <!-- MODULES -->
   <section class="blk" id="modules" style="padding-top:0">
     <div class="mods">
-      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-        <radialGradient id="mhG" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#ff1a1a"/><stop offset=".55" stop-color="#ff4d6d"/><stop offset="1" stop-color="#ff9a8a"/></radialGradient>
-        <filter id="mhB" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.2"/></filter>
-      </defs></svg>
+      
       <p class="eb rv">부위별 모듈</p>
       <h3 class="t2 rv">남아 있는 불편함은,<br>부위별로 더합니다.</h3>
       <p class="tx rv">세 단계 처방 위에 필요한 부위만 더합니다. <b>어떤 모듈을 더할지는 리포트를 보고 원장이 정합니다.</b></p>
       <div class="mgrid">
-        <div class="mc rv"><span class="vb">고친다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><path d="M12 50Q60 12 108 50Q60 88 12 50Z" fill="url(#mhG)" filter="url(#mhB)" opacity=".75"/><circle cx="60" cy="50" r="15" fill="url(#mhG)" filter="url(#mhB)"/></g></svg><small>EYE · 눈</small><b>화면 피로 · 건조</b><p>뻑뻑함, 충혈, 저녁이면 흐려지는 시야</p></div>
-        <div class="mc rv"><span class="vb">뚫는다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><path d="M55 34C38 30 24 52 26 80C40 86 53 82 55 70Z" fill="url(#mhG)" filter="url(#mhB)"/><path d="M65 34C82 30 96 52 94 80C80 86 67 82 65 70Z" fill="url(#mhG)" filter="url(#mhB)"/><rect x="56" y="8" width="8" height="40" rx="4" fill="url(#mhG)" filter="url(#mhB)"/></g></svg><small>BREATH · 코·호흡기</small><b>막힌 코, 얕은 숨</b><p>비염·코막힘으로 얕아진 호흡과 수면</p></div>
-        <div class="mc rv"><span class="vb">고친다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><rect x="48" y="8" width="24" height="84" rx="12" fill="url(#mhG)" filter="url(#mhB)"/><path d="M50 30H70M50 48H70M50 66H70" stroke="#fff" stroke-opacity=".7" stroke-width="4" stroke-linecap="round" filter="url(#mhB)"/></g></svg><small>THROAT · 목·기관지</small><b>잠긴 목, 마른 기침</b><p>말을 많이 하는 직업의 만성 인후 피로</p></div>
-        <div class="mc rv"><span class="vb">채운다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><path d="M52 12C52 32 32 38 32 58C32 80 62 90 80 74C94 62 86 44 72 46C63 47 62 36 64 12Z" fill="url(#mhG)" filter="url(#mhB)"/></g></svg><small>DIGEST · 소화기</small><b>더부룩함, 식후 졸림</b><p>소화에 에너지를 다 쓰는 몸</p></div>
-        <div class="mc rv"><span class="vb">고친다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><path d="M28 26H92V44H28V62H92V80H28" stroke="url(#mhG)" filter="url(#mhB)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="11"/></g></svg><small>GUT · 장</small><b>장 환경 · 면역</b><p>배변 리듬과 장 점막 회복</p></div>
-        <div class="mc rv"><span class="vb">채운다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><circle cx="50" cy="60" r="20" stroke="url(#mhG)" filter="url(#mhB)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/><path d="M64 46L88 22M70 22H88V40" stroke="url(#mhG)" filter="url(#mhB)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/></g></svg><small>MEN · 남성</small><b>전립선 · 스태미나</b><p>야간뇨, 떨어진 활력</p></div>
-        <div class="mc rv"><span class="vb">고친다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><circle cx="60" cy="38" r="20" stroke="url(#mhG)" filter="url(#mhB)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/><path d="M60 58V90M46 76H74" stroke="url(#mhG)" filter="url(#mhB)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/></g></svg><small>WOMEN · 여성</small><b>여성 웰니스</b><p>면역과 함께 움직이는 반복 피로</p></div>
-        <div class="mc rv"><span class="vb">뚫는다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><path d="M72 14A38 38 0 1 0 98 66A30 30 0 1 1 72 14Z" fill="url(#mhG)" filter="url(#mhB)"/></g></svg><small>SLEEP · 수면</small><b>딥 슬립</b><p>잠들기까지 30분 이상, 새벽 각성</p></div>
-        <div class="mc rv wide"><span class="vb">고친다</span><svg viewBox="0 0 120 100" aria-hidden="true"><g><path d="M58 10C80 10 92 28 90 48L98 60L90 64V74C90 84 80 86 70 84V96H38C42 80 30 72 30 50C30 26 42 10 58 10Z" fill="url(#mhG)" filter="url(#mhB)"/></g></svg><div><small>SKIN · 피부</small><b>스킨 웰니스</b><p>피로는 얼굴에 먼저 남습니다. 수액을 맞는 동안 피부도 함께</p></div></div>
+        <div class="mc rv"><span class="vb">고친다</span><img class="mi" src="images/mod2-eye.jpg" alt="" loading="lazy"><small>EYE · 눈</small><b>화면 피로 · 건조</b><p>뻑뻑함, 충혈, 저녁이면 흐려지는 시야</p></div>
+        <div class="mc rv"><span class="vb">뚫는다</span><img class="mi" src="images/mod2-breath.jpg" alt="" loading="lazy"><small>BREATH · 코·호흡기</small><b>막힌 코, 얕은 숨</b><p>비염·코막힘으로 얕아진 호흡과 수면</p></div>
+        <div class="mc rv"><span class="vb">고친다</span><img class="mi" src="images/mod2-throat.jpg" alt="" loading="lazy"><small>THROAT · 목·기관지</small><b>잠긴 목, 마른 기침</b><p>말을 많이 하는 직업의 만성 인후 피로</p></div>
+        <div class="mc rv"><span class="vb">채운다</span><img class="mi" src="images/mod2-digest.jpg" alt="" loading="lazy"><small>DIGEST · 소화기</small><b>더부룩함, 식후 졸림</b><p>소화에 에너지를 다 쓰는 몸</p></div>
+        <div class="mc rv"><span class="vb">고친다</span><img class="mi" src="images/mod2-gut.jpg" alt="" loading="lazy"><small>GUT · 장</small><b>장 환경 · 면역</b><p>배변 리듬과 장 점막 회복</p></div>
+        <div class="mc rv"><span class="vb">채운다</span><img class="mi" src="images/mod2-men.jpg" alt="" loading="lazy"><small>MEN · 남성</small><b>전립선 · 스태미나</b><p>야간뇨, 떨어진 활력</p></div>
+        <div class="mc rv"><span class="vb">고친다</span><img class="mi" src="images/mod2-women.jpg" alt="" loading="lazy"><small>WOMEN · 여성</small><b>여성 웰니스</b><p>면역과 함께 움직이는 반복 피로</p></div>
+        <div class="mc rv"><span class="vb">뚫는다</span><img class="mi" src="images/mod2-sleep.jpg" alt="" loading="lazy"><small>SLEEP · 수면</small><b>딥 슬립</b><p>잠들기까지 30분 이상, 새벽 각성</p></div>
+        <div class="mc rv wide"><span class="vb">고친다</span><img class="mi" src="images/mod2-skin.jpg" alt="" loading="lazy"><div><small>SKIN · 피부</small><b>스킨 웰니스</b><p>피로는 얼굴에 먼저 남습니다. 수액을 맞는 동안 피부도 함께</p></div></div>
       </div>
     </div>
   </section>
