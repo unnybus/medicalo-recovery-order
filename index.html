@@ -486,6 +486,7 @@ footer .disc{margin-top:20px;padding-top:16px;border-top:1px solid #e0e0e0;color
 #break{padding-bottom:0}
 #break .ib-img.scan{width:82%;margin:34px auto 0;border-radius:0;aspect-ratio:720/1060}
 .scan video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.scan canvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
 .mods{padding-top:44px;border-top:1px solid #e5e5e5}
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
 .mc{position:relative;background:#f5f5f5;border-radius:22px;padding:16px 14px 20px;text-align:center}
@@ -663,6 +664,7 @@ p,li,dd{text-wrap:pretty}
     <p class="tx rv c" style="margin-top:12px">메디컬오는 증상을 덮는 대신<br>피로가 시작된 자리부터 찾습니다.</p>
     <div class="ib-img rv scan" id="scan">
       <video src="video/scan2.mp4" poster="images/scan-poster2.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <canvas aria-hidden="true"></canvas>
     </div>
   </section>
 
@@ -1054,12 +1056,29 @@ p,li,dd{text-wrap:pretty}
   form.addEventListener('submit',function(e){e.preventDefault();/* TODO: 접수 연동 (구글시트 / CRM / 알림톡) */form.style.display='none';done.style.display='block'});
 })();
 
-/* SCAN VIDEO: play only when visible */
+/* SCAN VIDEO: play when visible, redraw on canvas with pure-white background (iOS renders video white as off-white) */
 (function(){
   var box=document.getElementById('scan'); if(!box) return;
-  var v=box.querySelector('video');
+  var v=box.querySelector('video'), cv=box.querySelector('canvas'), cx=cv.getContext('2d',{willReadFrequently:true});
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  new IntersectionObserver(function(es){es[0].isIntersecting?v.play().catch(function(){}):v.pause()},{threshold:.2}).observe(box);
+  var SW=720, SH=1060, running=false;
+  function size(){var w=Math.round(box.clientWidth*1.6);cv.width=w;cv.height=Math.round(w*SH/SW)}
+  size(); addEventListener('resize',size);
+  function draw(){
+    if(v.readyState>=2){
+      var W=cv.width,H=cv.height;
+      cx.drawImage(v,0,0,SW,SH,0,0,W,H);
+      var im=cx.getImageData(0,0,W,H),d=im.data,n=d.length,i,m,t;
+      for(i=0;i<n;i+=4){m=d[i];if(d[i+1]<m)m=d[i+1];if(d[i+2]<m)m=d[i+2];
+        if(m>214){t=(m-214)/22;if(t>1)t=1;d[i]+= (255-d[i])*t;d[i+1]+=(255-d[i+1])*t;d[i+2]+=(255-d[i+2])*t;}}
+      cx.putImageData(im,0,0);
+    }
+    if(!running) return;
+    if(v.requestVideoFrameCallback) v.requestVideoFrameCallback(draw); else requestAnimationFrame(draw);
+  }
+  function start(){v.play().catch(function(){});if(!running){running=true;draw()}}
+  function stop(){running=false;v.pause()}
+  new IntersectionObserver(function(es){es[0].isIntersecting?start():stop()},{threshold:.1}).observe(box);
 })();
 </script>
 </body>
