@@ -550,6 +550,19 @@ p,li,dd{text-wrap:pretty}
 .pstep dt{color:var(--mute)}
 .pstep dd{margin:0;color:var(--ink)}
 .ipop .mgrid{margin-top:0}
+.ih:empty{display:none}
+.mgrid.one{display:block;margin-top:18px}
+.mgrid.one .mc{display:none;background:var(--soft);padding:22px 20px 26px;border-radius:26px}
+.mgrid.one .mc.sel{display:block}
+.mgrid.one .mc.wide{grid-template-columns:none;text-align:center}
+.mgrid.one .mc .mi{width:180px;height:180px;margin:24px auto 14px;animation:none}
+.mgrid.one .mc small{font-size:12px}
+.mgrid.one .mc b{font-size:21px;margin-top:8px}
+.mgrid.one .mc p{font-size:14.5px;line-height:1.7;margin-top:10px}
+.mgrid.one .mc .vb{left:16px;top:16px;font-size:12px;padding:6px 10px}
+.mnav{display:flex;align-items:center;justify-content:center;gap:18px;margin:18px 0 6px}
+.mnav button{width:40px;height:40px;border-radius:50%;border:0;background:var(--soft);font-size:16px;color:var(--ink);cursor:pointer}
+.mnav span{font-family:var(--font);font-size:13px;color:var(--mute);min-width:44px;text-align:center}
 .ipop .mc{background:var(--soft)}
 /* module tiles */
 .mtiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:26px}
@@ -818,7 +831,7 @@ p,li,dd{text-wrap:pretty}
           <g class="rp"><text text-anchor="middle"><tspan class="k" x="192" y="386">One Report</tspan><tspan class="d" x="192" dy="21">세 시선이 겹치는 자리에서 순서를 정합니다</tspan></text></g>
         </svg>
       </figure>
-      <button class="mpill rv w" type="button" data-pop="pop-measure"><span>검사 항목 자세히 보기</span><i aria-hidden="true"></i></button>
+      
     </div>
   </section>
 
@@ -839,19 +852,24 @@ p,li,dd{text-wrap:pretty}
         <span class="verb">순환 · 막힌 길부터 엽니다</span>
         <h3>활성 자가혈 정맥주사</h3>
         <p class="q">길이 막혀 있으면 좋은 걸 넣어도 닿지 않아요.<br>본인 혈액에서 활성화한 성분을 정맥으로 되돌려,<br><b>순환의 길을 여는 첫 단계</b>입니다.</p>
+        <dl class="kv"><div><dt>방법</dt><dd>본인 혈액 60cc · 30분~1시간 링거</dd></div><div><dt>횟수</dt><dd>월 1회</dd></div></dl>
+        <details class="more"><summary>이런 분께 추천해요<i></i></summary><div class="mb"><p><span>대상</span>하루 8시간 이상 앉아 있는 분, 오후에 급격히 처지는 분</p><p><span>관련 검사</span>HRV · 혈압 · 산소포화도</p></div></details>
       </div>
       <div class="pp">
         <span class="verb">회복 · 밀린 수리를 끝냅니다</span>
         <h3>micro PDRN 약침</h3>
         <p class="q">PDRN은 <b>세포 재생 신호를 돕고<br>과한 염증 반응을 낮추는</b> 것으로 알려진 소재예요.<br>피로가 먼저 쌓이는 경혈에<br>미세 용량으로 놓습니다.</p>
+        <dl class="kv"><div><dt>방법</dt><dd>목·어깨·두피 경혈 · 정맥주사와 같은 날</dd></div><div><dt>횟수</dt><dd>BASIC 월 1회 · PREMIUM 월 2회</dd></div></dl>
+        <details class="more"><summary>이런 분께 추천해요<i></i></summary><div class="mb"><p><span>대상</span>야근·육아·교대근무로 잠이 쪼개진 분, 근육통·피부 트러블이 함께 오는 분</p><p><span>관련 검사</span>hs-CRP · 간 기능 · 페리틴</p></div></details>
       </div>
       <div class="pp">
         <span class="verb">에너지 · 빈 창고를 채웁니다</span>
         <h3>공진단 <small style="font-size:15px;color:var(--sub);font-weight:400">+ 회복 수액</small></h3>
         <p class="q">길이 열리고 수리가 끝난 뒤에야<br><b>채운 만큼 쓰입니다.</b><br>체질 진단 후 복용 간격을 정하고,<br>PREMIUM은 회복 수액이 더해집니다.</p>
+        <dl class="kv"><div><dt>방법</dt><dd>한방 복용 · 변증 후 간격 설계</dd></div><div><dt>횟수</dt><dd>BASIC 1환 · PREMIUM 10환 + 수액 1회</dd></div></dl>
+        <details class="more"><summary>이런 분께 추천해요<i></i></summary><div class="mb"><p><span>대상</span>과로가 오래 쌓인 40~50대, 손발이 차고 아침 기상이 유독 힘든 분</p><p><span>관련 검사</span>갑상선 · 비타민 D · 코르티솔 · 체성분</p></div></details>
       </div>
     </div>
-    <button class="mpill rv" type="button" data-pop="pop-program"><span>세 단계 처방 자세히 보기</span><i aria-hidden="true"></i></button>
     <p class="fine">* 모든 처방은 의사·한의사의 진단 후 적응증에 따라 결정되며,<br>개인에 따라 효과와 반응이 다를 수 있습니다.</p>
   </section>
 
@@ -861,8 +879,8 @@ p,li,dd{text-wrap:pretty}
       <p class="eb rv">부위별 모듈</p>
       <h3 class="t2 rv">남아 있는 불편함은,<br>부위별로 더합니다.</h3>
       <p class="tx rv">세 단계 처방 위에 필요한 부위만 더합니다.<br><b>어떤 모듈을 더할지는<br>리포트를 보고 제안합니다.</b></p>
-      <div class="mtiles rv"><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-eye.jpg" alt="" loading="lazy"><span>눈</span></button><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-breath.jpg" alt="" loading="lazy"><span>코·호흡</span></button><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-throat.jpg" alt="" loading="lazy"><span>목·기관지</span></button><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-digest.jpg" alt="" loading="lazy"><span>소화</span></button><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-gut.jpg" alt="" loading="lazy"><span>장</span></button><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-men.jpg" alt="" loading="lazy"><span>남성</span></button><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-women.jpg" alt="" loading="lazy"><span>여성</span></button><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-sleep.jpg" alt="" loading="lazy"><span>수면</span></button><button type="button" class="mt" data-pop="pop-modules"><img src="images/mod2-skin.jpg" alt="" loading="lazy"><span>피부</span></button></div>
-      <button class="mpill rv" type="button" data-pop="pop-modules"><span>부위별 모듈 자세히 보기</span><i aria-hidden="true"></i></button>
+      <div class="mtiles rv"><button type="button" class="mt" data-mod="0"><img src="images/mod2-eye.jpg" alt="" loading="lazy"><span>눈</span></button><button type="button" class="mt" data-mod="1"><img src="images/mod2-breath.jpg" alt="" loading="lazy"><span>코·호흡</span></button><button type="button" class="mt" data-mod="2"><img src="images/mod2-throat.jpg" alt="" loading="lazy"><span>목·기관지</span></button><button type="button" class="mt" data-mod="3"><img src="images/mod2-digest.jpg" alt="" loading="lazy"><span>소화</span></button><button type="button" class="mt" data-mod="4"><img src="images/mod2-gut.jpg" alt="" loading="lazy"><span>장</span></button><button type="button" class="mt" data-mod="5"><img src="images/mod2-men.jpg" alt="" loading="lazy"><span>남성</span></button><button type="button" class="mt" data-mod="6"><img src="images/mod2-women.jpg" alt="" loading="lazy"><span>여성</span></button><button type="button" class="mt" data-mod="7"><img src="images/mod2-sleep.jpg" alt="" loading="lazy"><span>수면</span></button><button type="button" class="mt" data-mod="8"><img src="images/mod2-skin.jpg" alt="" loading="lazy"><span>피부</span></button></div>
+      <p class="fine c" style="margin-top:14px">부위를 누르면 자세히 볼 수 있어요.</p>
     </div>
   </section>
 
@@ -942,10 +960,7 @@ p,li,dd{text-wrap:pretty}
 </div>
 
 <div class="ipop" id="pop-measure" aria-hidden="true"><div class="ipn" role="dialog" aria-modal="true" aria-label="첫 방문에 하는 검사"><button class="ix" type="button" data-pclose aria-label="닫기"><svg width="23" height="23" viewBox="0 0 23 23" aria-hidden="true"><line x1="5.7" y1="5.7" x2="17.3" y2="17.3" stroke="#323232"/><line x1="17.3" y1="5.7" x2="5.7" y2="17.3" stroke="#323232"/></svg></button><div class="isc"><p class="ieb">RECOVERY CHECK</p><h3 class="ih">첫 방문에 하는 검사</h3><div class="iimg"><img src="images/qk-blood.jpg" alt="" loading="lazy"></div><p class="itx">혈액·자율신경·체성분 검사와 한의 변증을 <b>한 번에</b> 진행하고,<br>결과는 한 장의 리포트로 설명드립니다.</p><div class="rd-list pm"><div class="rd rv"><small>BLOOD</small><b>혈액</b><p>일반혈액·간·신장 기능, 갑상선(TSH·fT4),<br>코르티솔, 페리틴, 비타민 D,<br>호모시스테인, <span class="nw">hs-CRP</span></p><em class="dev">검사 장비 · 혈액검사기 PT10</em><strong>회복 · 에너지를 읽습니다</strong></div><div class="rd rv"><small>NERVOUS</small><b>자율신경</b><p>심박변이도(HRV) 자율신경 균형 검사,<br>수면 패턴 문진</p><strong>순환의 신호를 읽습니다</strong></div><div class="rd rv"><small>BODY</small><b>몸</b><p>체성분·기초대사량, 혈압·산소포화도</p><em class="dev">검사 장비 · InBody 380<br>(임피던스 체지방측정기)</em><strong>순환 · 에너지를 읽습니다</strong></div><div class="rd rv"><small>CONSTITUTION</small><b>변증</b><p>간울·심화·비허·폐약·신허,<br>다섯 유형으로 피로의 결을 읽습니다</p><strong>세 단계의 체질 배경</strong></div><div class="rd rv last"><small>FOLLOW-UP</small><b>4주 뒤 같은 검사</b><p>1주차와 4주차 같은 항목을 다시 검사해<br>변화를 수치로 확인합니다</p><strong>느낌이 아니라 숫자로 끝냅니다</strong></div></div><p class="fine">* 검사 항목은 진료 후 필요에 따라 달라질 수 있습니다.</p></div></div></div>
-<div class="ipop" id="pop-program" aria-hidden="true"><div class="ipn" role="dialog" aria-modal="true" aria-label="뚫고, 고치고, 채웁니다"><button class="ix" type="button" data-pclose aria-label="닫기"><svg width="23" height="23" viewBox="0 0 23 23" aria-hidden="true"><line x1="5.7" y1="5.7" x2="17.3" y2="17.3" stroke="#323232"/><line x1="17.3" y1="5.7" x2="5.7" y2="17.3" stroke="#323232"/></svg></button><div class="isc"><p class="ieb">RECOVERY ORDER</p><h3 class="ih">뚫고, 고치고, 채웁니다</h3><p class="itx">단계마다 대표 처방 하나.<br>비중은 리포트를 보고 정합니다.</p><div class="pstep"><small>01 · 순환</small><b>활성 자가혈 정맥주사</b><dl><div><dt>방법</dt><dd>본인 혈액 60cc · 30분~1시간 링거</dd></div><div><dt>횟수</dt><dd>월 1회</dd></div><div><dt>대상</dt><dd>오래 앉아 일하는 분, 오후 3~4시에 급격히 처지는 분</dd></div><div><dt>관련 검사</dt><dd>HRV · 혈압 · 산소포화도</dd></div></dl></div>
-<div class="pstep"><small>02 · 회복</small><b>micro PDRN 약침</b><dl><div><dt>방법</dt><dd>목·어깨·두피 경혈 · 정맥주사와 같은 날</dd></div><div><dt>횟수</dt><dd>BASIC 월 1회 · PREMIUM 월 2회</dd></div><div><dt>대상</dt><dd>야근·교대근무로 잠이 쪼개진 분, 목덜미가 뻣뻣하고 두통이 잦은 분</dd></div><div><dt>관련 검사</dt><dd>hs-CRP · 간 기능 · 페리틴</dd></div></dl></div>
-<div class="pstep"><small>03 · 에너지</small><b>공진단 + 회복 수액</b><dl><div><dt>방법</dt><dd>한방 복용 · 변증 후 간격 설계</dd></div><div><dt>횟수</dt><dd>BASIC 1환 · PREMIUM 10환 + 수액 1회</dd></div><div><dt>대상</dt><dd>아침 기상이 유독 힘들고 손발이 찬 분, 쉽게 지치는 40~50대</dd></div><div><dt>관련 검사</dt><dd>갑상선 · 비타민 D · 코르티솔 · 체성분</dd></div></dl></div><p class="fine">* 모든 처방은 의사·한의사의 진단 후 적응증에 따라 결정되며,<br>개인에 따라 효과와 반응이 다를 수 있습니다.</p></div></div></div>
-<div class="ipop" id="pop-modules" aria-hidden="true"><div class="ipn" role="dialog" aria-modal="true" aria-label="남아 있는 불편함은,<br>부위별로 더합니다"><button class="ix" type="button" data-pclose aria-label="닫기"><svg width="23" height="23" viewBox="0 0 23 23" aria-hidden="true"><line x1="5.7" y1="5.7" x2="17.3" y2="17.3" stroke="#323232"/><line x1="17.3" y1="5.7" x2="5.7" y2="17.3" stroke="#323232"/></svg></button><div class="isc"><p class="ieb">BODY MODULE</p><h3 class="ih">남아 있는 불편함은,<br>부위별로 더합니다</h3><p class="itx">세 단계 처방 위에 필요한 부위만 더합니다.<br>어떤 모듈을 더할지는 리포트를 보고 제안합니다.</p><div class="mgrid">
+<div class="ipop" id="pop-modules" aria-hidden="true"><div class="ipn" role="dialog" aria-modal="true" aria-label=""><button class="ix" type="button" data-pclose aria-label="닫기"><svg width="23" height="23" viewBox="0 0 23 23" aria-hidden="true"><line x1="5.7" y1="5.7" x2="17.3" y2="17.3" stroke="#323232"/><line x1="17.3" y1="5.7" x2="5.7" y2="17.3" stroke="#323232"/></svg></button><div class="isc"><p class="ieb">BODY MODULE</p><h3 class="ih"></h3><div class="mgrid one">
         <div class="mc"><span class="vb">고친다</span><img class="mi" src="images/mod2-eye.jpg" alt="" loading="lazy"><small>EYE · 눈</small><b>화면 피로 · 건조</b><p>뻑뻑함, 충혈,<br>저녁이면 흐려지는 시야</p></div>
         <div class="mc"><span class="vb">뚫는다</span><img class="mi" src="images/mod2-breath.jpg" alt="" loading="lazy"><small>BREATH · 코·호흡기</small><b>막힌 코, 얕은 숨</b><p>비염·코막힘으로 얕아진<br>호흡과 수면</p></div>
         <div class="mc"><span class="vb">고친다</span><img class="mi" src="images/mod2-throat.jpg" alt="" loading="lazy"><small>THROAT · 목·기관지</small><b>잠긴 목, 마른 기침</b><p>말을 많이 하는 직업의<br>만성 인후 피로</p></div>
@@ -955,8 +970,7 @@ p,li,dd{text-wrap:pretty}
         <div class="mc"><span class="vb">고친다</span><img class="mi" src="images/mod2-women.jpg" alt="" loading="lazy"><small>WOMEN · 여성</small><b>여성 웰니스</b><p>면역과 함께 움직이는<br>반복 피로</p></div>
         <div class="mc"><span class="vb">뚫는다</span><img class="mi" src="images/mod2-sleep.jpg" alt="" loading="lazy"><small>SLEEP · 수면</small><b>딥 슬립</b><p>잠들기까지 30분 이상,<br>새벽 각성</p></div>
         <div class="mc wide"><span class="vb">고친다</span><img class="mi" src="images/mod2-skin.jpg" alt="" loading="lazy"><div><small>SKIN · 피부</small><b>스킨 웰니스</b><p>피로는 얼굴에 먼저 남습니다.<br>수액을 맞는 동안 피부도 함께</p></div></div>
-      </div>
-    </div></div></div></div></div>
+      </div><div class="mnav"><button type="button" data-mstep="-1" aria-label="이전 부위">←</button><span id="mPos">1 / 9</span><button type="button" data-mstep="1" aria-label="다음 부위">→</button></div><p class="fine c">어떤 모듈을 더할지는 리포트를 보고 제안합니다.</p></div></div></div>
 <!-- form sheet -->
 <div class="modal" id="modal" aria-hidden="true">
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mTitle">
@@ -1118,6 +1132,10 @@ p,li,dd{text-wrap:pretty}
   $$('[data-pop]').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.pop);if(el)openPop(el)})});
   ipops.forEach(function(el){el.addEventListener('click',function(e){if(e.target===el||e.target.closest('[data-pclose]'))closePop(el)})});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')ipops.forEach(closePop)});
+  var mPop=$('#pop-modules'),mCards=$$('#pop-modules .mc'),mIdx=0;
+  function showMod(i){mIdx=(i+mCards.length)%mCards.length;mCards.forEach(function(c,k){c.classList.toggle('sel',k===mIdx)});$('#mPos').textContent=(mIdx+1)+' / '+mCards.length}
+  $$('[data-mod]').forEach(function(b){b.addEventListener('click',function(){showMod(+b.dataset.mod);openPop(mPop)})});
+  $$('[data-mstep]').forEach(function(b){b.addEventListener('click',function(){showMod(mIdx+(+b.dataset.mstep))})});
 
   /* scroll-linked */
   var prog=$('#prog'),hl=$$('#hl span'),tl=$('#tl'),tis=$$('.ti',tl),fbar=$('#fbar'),tlImg=$('#tlImg'),ibImg=$('#ibImg'),clImg=$('#clImg'),hero=$('#hero');
