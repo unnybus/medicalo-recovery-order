@@ -509,6 +509,41 @@ p,li,dd{text-wrap:pretty}
 .rvw-hd b{font-size:15.5px;line-height:1.45}
 .rvw-hd span{display:block;margin-top:4px}
 
+/* ===== pricing ===== */
+.pcs{display:grid;gap:12px;margin-top:28px}
+.pc{position:relative;background:#fff;border-radius:28px;padding:26px 22px 22px}
+.pc.dk{background:#1c1b1a;color:#fff}
+.pc-rec{position:absolute;right:18px;top:20px;font-style:normal;font-family:var(--font);font-size:10.5px;letter-spacing:.12em;color:#fff;background:var(--red);border-radius:999px;padding:5px 10px}
+.pc-k{display:block;font-family:var(--font);font-size:12px;letter-spacing:.08em;color:var(--mute)}
+.pc.dk .pc-k{color:rgba(255,255,255,.55)}
+.pc h3{margin:10px 0 0;font-size:20px;line-height:1.45;font-weight:500;letter-spacing:-.03em}
+.pc-price{display:flex;align-items:baseline;gap:6px;margin-top:18px}
+.pc-price b{font-family:var(--font);font-weight:300;font-size:44px;line-height:1;letter-spacing:-.04em;font-feature-settings:"tnum"}
+.pc-price span{font-size:14px;color:var(--sub)}
+.pc.dk .pc-price span{color:rgba(255,255,255,.65)}
+.pc-sub{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px;color:var(--ink)}
+.pc.dk .pc-sub{color:#fff}
+.pc-sub s{color:var(--mute)}
+.pc.dk .pc-sub s{color:rgba(255,255,255,.45)}
+.pc-m{display:flex;gap:6px;margin-top:16px;flex-wrap:wrap}
+.pc-m button{border:1px solid #e2e2e2;background:#fff;border-radius:999px;height:32px;padding:0 13px;font:inherit;font-size:13px;color:var(--sub);cursor:pointer}
+.pc-m button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.pc.dk .pc-m button{background:transparent;border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.75)}
+.pc.dk .pc-m button.on{background:#fff;border-color:#fff;color:#1c1b1a}
+.pc-list{list-style:none;margin:20px 0 20px;padding:0;border-top:1px solid #ececec}
+.pc.dk .pc-list{border-color:rgba(255,255,255,.14)}
+.pc-list li{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
+.pc.dk .pc-list li{border-color:rgba(255,255,255,.1)}
+.pc-list b{display:block;font-weight:500}
+.pc-list small{display:block;font-size:12px;color:var(--mute);margin-top:2px}
+.pc.dk .pc-list small{color:rgba(255,255,255,.5)}
+.pc-list em{font-style:normal;flex-shrink:0;color:var(--sub)}
+.pc.dk .pc-list em{color:rgba(255,255,255,.75)}
+.pc .btn{width:100%}
+.pc-note{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:6px}
+.pc-note li{position:relative;padding-left:16px;font-size:13px;color:var(--sub);line-height:1.6}
+.pc-note li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--red)}
+
 /* ===== v2 ===== */
 .prog{display:none}
 .hd{box-shadow:0 1px 0 #ececec}
@@ -605,6 +640,44 @@ p,li,dd{text-wrap:pretty}
 .sp-list b{display:block;font-size:16px;font-weight:500}
 .sp-list p{margin:4px 0 0;font-size:14px;line-height:1.65;color:var(--sub)}
 #doctors .one{margin-top:48px}
+.chap{gap:0;overflow-x:auto;scrollbar-width:none;justify-content:space-between;padding:0 6px}
+.chap::-webkit-scrollbar{display:none}
+.chap a{padding:0 7px;font-size:12.5px;white-space:nowrap}
+.chap a.on::after{left:7px;right:7px}
+.hlink{display:block;text-align:center;font-size:14px;color:#fff;opacity:.9;text-decoration:underline;text-underline-offset:4px;padding:4px 0}
+.fast{background:#1c1b1a;color:#fff}
+.fast .eb{color:#ff4a3d}
+.fast .tx{color:rgba(255,255,255,.62)}
+.fast .fine{color:rgba(255,255,255,.4)}
+.f90{display:flex;align-items:center;gap:20px;margin-top:30px;padding:22px 22px;border:1px solid rgba(255,255,255,.14);border-radius:26px}
+.f90n{display:flex;align-items:baseline;gap:4px}
+.f90n b{font-family:var(--font);font-weight:300;font-size:64px;line-height:1;letter-spacing:-.05em}
+.f90n span{font-family:var(--font);font-size:14px;color:rgba(255,255,255,.6)}
+.f90t{display:flex;flex-direction:column;gap:6px}
+.f90t span{font-size:13px;color:#fff;background:rgba(255,255,255,.08);border-radius:999px;padding:5px 12px;width:fit-content}
+.fast .tl::before{background:rgba(255,255,255,.16)}
+.fast .tl .fill{background:#fff}
+.fast .ti::before{background:#1c1b1a;border-color:rgba(255,255,255,.3)}
+.fast .ti.on::before{background:#fff;border-color:#fff}
+.fast .ti.pre.on::before{background:var(--red);border-color:var(--red)}
+.fast .ti small{color:rgba(255,255,255,.45)}
+.fast .ti.pre small{color:#ff4a3d}
+.fast .ti b{color:#fff}
+.fast .ti p{color:rgba(255,255,255,.62)}
+.route{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rt{display:block;border-radius:16px;padding:14px 14px 13px;text-align:left}
+.rt b{display:block;font-size:15px;font-weight:500;color:inherit}
+.rt span{display:block;font-size:12px;margin-top:3px;opacity:.75}
+.rt.nv{background:#03c75a;color:#fff}
+.rt.kk{background:#fee500;color:#191919}
+.or{display:flex;align-items:center;gap:10px;margin:18px 0 14px;font-size:12.5px;color:var(--mute)}
+.or::before,.or::after{content:"";flex:1;height:1px;background:#ececec}
+.tchips{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tchips label{margin:0}
+.tchips input{position:absolute;opacity:0;pointer-events:none}
+.tchips span{display:flex;align-items:center;justify-content:center;height:44px;border:1px solid var(--line);border-radius:12px;font-size:14px;color:var(--sub);cursor:pointer}
+.tchips input:checked+span{border-color:var(--ink);background:var(--ink);color:#fff}
+.fbar a.t{color:inherit}
 </style>
 </head>
 <body>
@@ -613,20 +686,17 @@ p,li,dd{text-wrap:pretty}
 <header class="hd"><div class="prog" id="prog"></div><div class="hd-in">
   <a href="#top"><img src="images/logo.svg" alt="MEDICAL O. 의원 | 한의원"></a>
   <a href="#" class="rsv" data-open>상담 예약</a>
-</div><nav class="chap" id="chap" aria-label="목차"><a href="#" data-c="증상"><i>01</i>증상</a><a href="#" data-c="원인"><i>02</i>원인</a><a href="#" data-c="측정"><i>03</i>측정</a><a href="#" data-c="처방"><i>04</i>처방</a><a href="#" data-c="진료"><i>05</i>진료</a></nav></header>
+</div><nav class="chap" id="chap" aria-label="목차"><a href="#" data-c="증상"><i>01</i>증상</a><a href="#" data-c="90분"><i>02</i>90분</a><a href="#" data-c="원인"><i>03</i>원인</a><a href="#" data-c="측정"><i>04</i>측정</a><a href="#" data-c="처방"><i>05</i>처방</a><a href="#" data-c="가격"><i>06</i>가격</a></nav></header>
 
 <main class="page" id="top">
 
   <section class="hero" id="hero">
     <p class="eb">Recovery Order</p>
     <h1 class="t1"><span class="ln"><span>쉬어도 안 풀리는 피로,</span></span><span class="ln"><span>풀리는 <em>순서</em>가 있습니다</span></span></h1>
-    <p class="lead">의원·한의원이 함께 찾는 만성피로 회복 프로그램</p>
+    <p class="lead">시간은 없고, 빨리 회복하고 싶은 분께.<br>의원·한의원이 함께하는 90분 회복 프로그램</p>
 
     <div class="hv"><img src="images/hero-blur.webp" alt=""></div>
-    <div class="hero-cta">
-      <a href="#check" class="btn red">3분 피로 체크하기</a>
-      <p class="fine">월 50만 원부터 · 6개월 기준</p>
-    </div>
+    <div class="hero-cta"><button class="btn red" type="button" data-open data-ctx="hero">첫 방문 예약하기</button><a class="hlink" href="#check">3분 피로 체크부터 해볼게요 →</a><p class="fine">회당 60~90분 · 월 50만 원부터 (6개월 기준)</p></div>
   </section>
 
   <section class="blk g day" id="day" data-chap="증상">
@@ -645,7 +715,17 @@ p,li,dd{text-wrap:pretty}
     </div>
   </section>
 
-  <section class="blk" id="compare" data-chap="증상">
+  <section class="blk fast" id="fast" data-chap="90분">
+    <p class="eb rv">원장님이 가장 권하는 분</p>
+    <h2 class="t2 rv">시간은 없는데,<br>빨리 회복하고 싶다면.</h2>
+    <p class="tx rv">누워 있는 90분이면 됩니다.<br>채혈부터 약침까지, 한 자리에서 끝나요.</p>
+    <div class="f90 rv"><div class="f90n"><b>90</b><span>min</span></div><div class="f90t"><span>누워서 그대로</span><span>본인 혈액 활용</span><span>당일 일상 복귀</span></div></div>
+    <div class="tl" id="tlF"><span class="fill"></span><div class="ti"><small>STEP 01</small><b>채혈</b><p>편하게 누운 채로,<br>팔에서 본인 혈액 60cc를 채혈해요.</p></div><div class="ti"><small>STEP 02</small><b>활성화</b><p>채혈한 혈액을 활성화하는 동안<br>그대로 누워서 쉬어요.</p></div><div class="ti"><small>STEP 03</small><b>다시 정맥으로</b><p>활성화한 본인 혈액을 링거로 되돌려요.<br>외부 약물이 아닌 내 혈액을 쓰는 방식이에요.</p></div><div class="ti"><small>STEP 04</small><b>뒷목·어깨 약침</b><p>돌처럼 뭉친 뒷목과 어깨에<br>micro PDRN 약침을 놓아요.</p></div><div class="ti"><small>STEP 05</small><b>눈 주위 침</b><p>뻑뻑하고 무거운 눈 주위까지<br>함께 풀어요.</p></div><div class="ti pre"><small>STEP 06</small><b>바로 일상으로</b><p>당일 일상생활이 가능해요.<br>월–목은 밤 9시까지 진료합니다.</p></div></div>
+    <button class="btn red rv" type="button" data-open data-ctx="fast" style="margin-top:34px">90분 예약 잡기</button>
+    <p class="fine">* 시술 순서와 시간은 진료 후 개인에 따라 달라질 수 있습니다.</p>
+  </section>
+
+  <section class="blk" id="compare" data-chap="원인">
     <p class="eb rv">그래서 많이들 해보시죠</p>
     <h2 class="t2 rv">커피도, 수액도, 보약도<br><em>그때뿐인 이유</em></h2>
     <p class="tx rv">길이 막힌 채로 연료만 넣으면,<br>넣은 만큼 쓰이지 못하고<br>금방 원래대로 돌아와요.</p>
@@ -669,35 +749,6 @@ p,li,dd{text-wrap:pretty}
       <p class="cap" id="cmpCap"></p>
       <p class="fine" style="margin-top:6px">* 이해를 돕기 위한 예시 그림이며,<br>실제 효과를 나타내지 않습니다.</p>
     </div>
-  </section>
-
-  <section class="blk g" id="check" data-chap="증상">
-    <p class="eb rv">3분 피로 체크 <small>10문항</small></p>
-    <h2 class="t2 rv">지금 내 몸은<br>어디서부터 막혀 있을까요?</h2>
-
-    <div class="quiz rv" id="quiz">
-      <div class="qq">
-        <div class="qtop"><span class="zone" id="qZone">순환</span><span id="qCount">1 / 10</span></div>
-        <div class="qprog"><i id="qProg"></i></div>
-        <div class="qbody"><p class="qtext" id="qText"></p></div>
-        <div class="qbtns"><button type="button" data-a="0">아니요</button><button type="button" class="yes" data-a="1">네, 그래요</button></div>
-        <button class="qback" type="button" id="qBack">← 이전 문항</button>
-      </div>
-      <div class="qres">
-        <div class="ring"><svg viewBox="0 0 150 150"><circle class="bg" cx="75" cy="75" r="65"/><circle class="fg" id="ringFg" cx="75" cy="75" r="65"/></svg><div><b id="rScore">0</b><span>회복 잔고</span></div></div>
-        <h4 id="rName"></h4>
-        <p class="rd" id="rDesc"></p>
-        <div class="bars">
-          <div class="bar" data-bar="c"><span>순환</span><i></i><em>0/4</em></div>
-          <div class="bar" data-bar="r"><span>회복</span><i></i><em>0/3</em></div>
-          <div class="bar" data-bar="e"><span>에너지</span><i></i><em>0/3</em></div>
-        </div>
-        <div class="rp">추천 코스<b id="rPlan">-</b></div>
-        <button class="btn red" type="button" data-open data-ctx="quiz">이 결과로 상담 신청</button>
-        <button class="again" type="button" id="qAgain">다시 체크하기</button>
-      </div>
-    </div>
-    <p class="fine c rv">진단이 아닌, 상담을 위한 참고용입니다.</p>
   </section>
 
   <section class="blk g" id="why" data-chap="원인">
@@ -769,6 +820,35 @@ p,li,dd{text-wrap:pretty}
       <span class="th tmpi"><i class="tmpl" aria-hidden="true">임시</i><img src="images/city-poster.jpg" alt=""></span>
       <span><b>1분 영상으로 보기</b><span>몸은 24시간 돌아가는 배달 도시입니다</span></span>
     </button>
+  </section>
+
+  <section class="blk g" id="check" data-chap="원인">
+    <p class="eb rv">3분 피로 체크 <small>10문항</small></p>
+    <h2 class="t2 rv">지금 내 몸은<br>어디서부터 막혀 있을까요?</h2>
+
+    <div class="quiz rv" id="quiz">
+      <div class="qq">
+        <div class="qtop"><span class="zone" id="qZone">순환</span><span id="qCount">1 / 10</span></div>
+        <div class="qprog"><i id="qProg"></i></div>
+        <div class="qbody"><p class="qtext" id="qText"></p></div>
+        <div class="qbtns"><button type="button" data-a="0">아니요</button><button type="button" class="yes" data-a="1">네, 그래요</button></div>
+        <button class="qback" type="button" id="qBack">← 이전 문항</button>
+      </div>
+      <div class="qres">
+        <div class="ring"><svg viewBox="0 0 150 150"><circle class="bg" cx="75" cy="75" r="65"/><circle class="fg" id="ringFg" cx="75" cy="75" r="65"/></svg><div><b id="rScore">0</b><span>회복 잔고</span></div></div>
+        <h4 id="rName"></h4>
+        <p class="rd" id="rDesc"></p>
+        <div class="bars">
+          <div class="bar" data-bar="c"><span>순환</span><i></i><em>0/4</em></div>
+          <div class="bar" data-bar="r"><span>회복</span><i></i><em>0/3</em></div>
+          <div class="bar" data-bar="e"><span>에너지</span><i></i><em>0/3</em></div>
+        </div>
+        <div class="rp">추천 코스<b id="rPlan">-</b></div>
+        <button class="btn red" type="button" data-open data-ctx="quiz">이 결과로 상담 신청</button>
+        <button class="again" type="button" id="qAgain">다시 체크하기</button>
+      </div>
+    </div>
+    <p class="fine c rv">진단이 아닌, 상담을 위한 참고용입니다.</p>
   </section>
 
   <section class="blk ib" id="break" data-chap="측정">
@@ -884,19 +964,39 @@ p,li,dd{text-wrap:pretty}
     </div>
   </section>
 
-  <section class="blk g" id="space" data-chap="진료">
-    <p class="eb rv">진료 환경</p>
-    <h2 class="t2 rv">몸도 힘든데,<br>병원에서까지 지치지 않게.</h2>
-    <div class="sp-img rv"><img src="images/qk-lobby.jpg" alt="메디컬오 압구정 로비" loading="lazy"></div>
-    <ol class="sp-list">
-      <li class="rv"><span>01</span><div><b>기다림을 줄인 예약제</b><p>피곤한 몸으로 오래 기다리지 않도록<br>시간을 맞춰 진료합니다.</p></div></li>
-      <li class="rv"><span>02</span><div><b>조용하고 프라이빗한 공간</b><p>다른 사람과 마주칠 일이 적은 동선에서<br>링거를 맞는 동안 쉬어 가세요.</p></div></li>
-      <li class="rv"><span>03</span><div><b>원장 직접 상담</b><p>지금의 피로 상태와 관리 방향을<br>원장이 직접 설명드립니다.</p></div></li>
-      <li class="rv"><span>04</span><div><b>평일 밤 9시까지</b><p>월–목은 21시까지 진료해<br>퇴근 후에도 들를 수 있어요.</p></div></li>
-    </ol>
+  <section class="blk g" id="price" data-chap="가격">
+    <p class="eb rv">구독 요금</p>
+    <h2 class="t2 rv">매달 한 세트,<br>두 가지 구독</h2>
+    <p class="tx rv">세 단계를 매달 한 번 돌리는 BASIC,<br>세 단계를 촘촘하게 채우는 PREMIUM.<br>월 요금은 6개월 기준이에요.</p>
+    <div class="pcs rv">
+      <article class="pc" data-sel="6" data-single="700000" data-p1="700000" data-p3="1800000" data-p6="3000000">
+        <small class="pc-k">Recovery Order · Basic</small>
+        <h3>한 달에 한 번,<br>뚫고 채웁니다.</h3>
+        <div class="pc-price"><b class="pc-mo">500,000</b><span>원 / 월</span></div>
+        <p class="pc-sub"><span class="pc-tot">6개월 총 3,000,000원</span><s>단품 합산 월 700,000원</s></p>
+        <div class="pc-m"><button type="button" data-m="1">1개월</button><button type="button" data-m="3">3개월</button><button type="button" data-m="6" class="on">6개월</button></div>
+        <ul class="pc-list"><li><span><b>활성 자가혈 정맥주사</b><small>60cc 채혈 · 30분~1시간 링거</small></span><em>1회</em></li><li><span><b>micro PDRN 약침</b><small>정맥주사와 같은 날</small></span><em>1회</em></li><li><span><b>공진단</b><small>변증 후 복용</small></span><em>1환</em></li><li><span><b>혈액검사 판독 · 순서 리포트</b></span><em>포함</em></li><li><span><b>재검 알림 · 식단 가이드</b><small>카카오톡</small></span><em>포함</em></li></ul>
+        <button class="btn ink" type="button" data-open data-plan="BASIC">BASIC 상담 예약</button>
+      </article>
+      <article class="pc dk" data-sel="6" data-single="1400000" data-p1="1400000" data-p3="3600000" data-p6="6000000" data-p12="10000000">
+        <i class="pc-rec">RECOMMENDED</i><small class="pc-k">Recovery Order · Premium</small>
+        <h3>2주 간격으로 고치고,<br>창고까지 채웁니다.</h3>
+        <div class="pc-price"><b class="pc-mo">1,000,000</b><span>원 / 월</span></div>
+        <p class="pc-sub"><span class="pc-tot">6개월 총 6,000,000원</span><s>단품 합산 월 1,400,000원</s></p>
+        <div class="pc-m"><button type="button" data-m="1">1개월</button><button type="button" data-m="3">3개월</button><button type="button" data-m="6" class="on">6개월</button><button type="button" data-m="12">12개월</button></div>
+        <ul class="pc-list"><li><span><b>활성 자가혈 정맥주사</b><small>60cc 채혈 · 30분~1시간 링거</small></span><em>1회</em></li><li><span><b>micro PDRN 약침</b><small>2주 간격</small></span><em>2회</em></li><li><span><b>공진단</b><small>변증 후 복용 간격 설계</small></span><em>10환</em></li><li><span><b>회복 수액</b><small>진단에 따라 조성</small></span><em>1회</em></li><li><span><b>판독 · 재검 알림 · 식단 가이드</b></span><em>포함</em></li><li><span><b>8주 전후 비교 리포트</b><small>2개월 차부터</small></span><em>포함</em></li></ul>
+        <button class="btn red" type="button" data-open data-plan="PREMIUM">PREMIUM 상담 예약</button>
+      </article>
+    </div>
+    <ul class="pc-note">
+      <li>매월 자동 갱신이 아닌 기간 단위 선결제</li>
+      <li>다음 달 구성은 재검 결과를 보고 함께 결정</li>
+      <li>비급여 항목 · 가격 사전 고지 · 중도 해지 규정 서면 안내</li>
+    </ul>
+    <p class="fine">* 모든 시술·처방은 진료 후 적응증에 따라 결정되며,<br>구성이 조정될 수 있습니다.<br>부가세 포함 여부는 상담 시 안내합니다.</p>
   </section>
 
-  <section class="blk" id="month" data-chap="진료">
+  <section class="blk" id="month" data-chap="가격">
     <p class="eb rv">한 달은 이렇게</p>
     <h2 class="t2 rv">회사를 쉬지 않아도,<br>한 달에 한 번이면 됩니다.</h2>
     <div class="tl" id="tl">
@@ -910,13 +1010,13 @@ p,li,dd{text-wrap:pretty}
     <p class="fine">* 평일 21시(월–목)까지, 토요일 15시까지 진료합니다.</p>
   </section>
 
-  <section class="blk g" id="reviews" data-chap="진료">
+  <section class="blk" id="reviews" data-chap="가격">
     <div class="sl-hd"><div><p class="nv rv"><b>NAVER</b> Real Review</p><p class="sub rv" style="margin-top:4px">가공되지 않은 후기로<br>프로그램을 미리 만나보세요.</p></div><div class="arw"><button type="button" data-dir="-1" aria-label="이전">←</button><button type="button" data-dir="1" aria-label="다음">→</button></div></div>
     <div class="sl"><article class="rvw"><div class="rvw-hd"><b>“오후만 되면 눈을 뜨기도 힘들었어요”</b><span>40대 · 사무직 남성</span></div><p>오후 3~4시만 되면 눈이 뻑뻑하고 눈꺼풀이 무거워서, 커피를 마셔도 머리가 멍했어요. 목과 어깨도 늘 돌처럼 뭉쳐 있었고요. 받고 나서는 눈이 맑아지고 머리가 가벼워진 느낌이라 다시 일에 집중이 돼요.</p><small>네이버 예약 후기 · 시안용 샘플</small></article><article class="rvw"><div class="rvw-hd"><b>“쉬는 날에도 피곤해서 아무것도 못 했어요”</b><span>30대 · 교대근무 간호사</span></div><p>야간근무가 끝나면 몸이 천근만근이고, 자고 일어나도 피로가 그대로였어요. 목덜미가 뻣뻣해서 두통까지 오고, 쉬는 날은 내내 누워만 있었어요. 몸의 긴장이 풀리는 느낌이 들어서 미뤄둔 일상을 다시 챙겨보려고요.</p><small>네이버 예약 후기 · 시안용 샘플</small></article><article class="rvw"><div class="rvw-hd"><b>“아침에 일어나는 것부터 너무 힘들었어요”</b><span>50대 · 자영업 남성</span></div><p>예전엔 하루 종일 일해도 괜찮았는데, 요즘은 아침부터 몸이 무겁고 찌뿌둥했어요. 손발도 차고, 이것저것 챙겨 먹어도 그때뿐이었고요. 몸이 한결 가벼워진 느낌이라 꾸준히 관리해 보려고 합니다.</p><small>네이버 예약 후기 · 시안용 샘플</small></article><article class="rvw"><div class="rvw-hd"><b>“7시간을 자도 아침부터 피곤했어요”</b><span>40대 · 워킹맘</span></div><p>충분히 자도 개운하지 않고, 오후엔 눈이 감기고 얼굴까지 푸석해 보였어요. 일할 땐 버티는데 집에 오면 아이와 놀아줄 힘이 없는 게 제일 속상했어요. 몸과 머리가 개운해지니 저를 위한 회복 시간이 필요했구나 싶어요.</p><small>네이버 예약 후기 · 시안용 샘플</small></article><article class="rvw"><div class="rvw-hd"><b>“수액을 맞아도 며칠 지나면 다시 피곤했어요”</b><span>30대 · 스타트업 대표</span></div><p>야근이 잦아 수액을 자주 맞았는데, 며칠 지나면 똑같았어요. 중요한 회의 전엔 컨디션부터 걱정됐고요. 지금 상태를 검사 수치로 볼 수 있어서 좋았고, 피로는 참는 게 아니라 평소에 관리해야겠다고 느꼈어요.</p><small>네이버 예약 후기 · 시안용 샘플</small></article><article class="rvw"><div class="rvw-hd"><b>“몸도 힘든데 병원에서까지 지치고 싶지 않았어요”</b><span>공간 · 상담</span></div><p>피곤한 상태라 긴 대기가 제일 부담이었는데, 조용하고 다른 사람과 마주칠 일이 적어서 편했어요. 원장님이 지금 피로 상태를 자세히 설명해 주셨고, 늦은 시간 진료가 있어 퇴근 후에도 들를 수 있었어요.</p><small>네이버 예약 후기 · 시안용 샘플</small></article></div>
     <p class="fine">* 의뢰자 제공 키워드로 작성한 시안용 샘플입니다.<br>실제 네이버 예약 후기로 교체됩니다.<br>개인에 따라 느낌은 다를 수 있습니다.</p>
   </section>
 
-  <section class="blk" id="faq" data-chap="진료">
+  <section class="blk g" id="faq" data-chap="가격">
     <h2 class="t2 rv">자주하는 질문</h2>
     <div class="faq rv">
       <details><summary>1. 번아웃인지 그냥 피곤한 건지 모르겠어요.</summary><p>그래서 측정이 먼저입니다. 혈액·자율신경·체성분 검사와 한의 변증을 한 번에 진행하고, 한 장의 리포트로 설명드립니다.</p></details>
@@ -934,8 +1034,8 @@ p,li,dd{text-wrap:pretty}
     <div class="in">
       <p class="eb" style="color:#fff;opacity:.8">Rest, Your Life.</p>
       <h2 class="t1">피로를 의지가 아닌,<br>몸의 순서로 풉니다.</h2>
-      <p>상담을 남기시면<br>코디네이터가 24시간 안에 연락드려요.</p>
-      <button class="btn red" type="button" data-open>상담 예약하기</button>
+      <p>누워 있는 90분이면 됩니다.<br>월–목은 밤 9시까지 진료해요.</p>
+      <button class="btn red" type="button" data-open data-ctx="closing">첫 방문 예약하기</button>
       <div class="row"><a class="btn line" href="tel:0225151073">전화 상담</a><a class="btn kakao" href="https://pf.kakao.com/_xjGnAC" target="_blank" rel="noopener">카카오톡 상담</a></div>
     </div>
   </section>
@@ -954,9 +1054,9 @@ p,li,dd{text-wrap:pretty}
 </div></footer>
 
 <div class="fbar" id="fbar">
-  <div class="t">리커버리 오더<small>월 50만 원부터 · 6개월 기준</small></div>
+  <a class="t" href="#price">리커버리 오더<small>월 50만 원부터 · 가격 보기 ›</small></a>
   <a class="ic" href="https://pf.kakao.com/_xjGnAC" target="_blank" rel="noopener" aria-label="카카오톡 상담"><svg viewBox="0 0 24 24"><path fill="#3a1d1d" d="M12 4C7 4 3 7.1 3 11c0 2.5 1.7 4.7 4.2 6l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.3 0 .7.1 1 .1 5 0 9-3.1 9-7s-4-7.3-9-7.3"/></svg></a>
-  <button type="button" data-open>상담 예약</button>
+  <button type="button" data-open data-ctx="bar">예약하기</button>
 </div>
 
 <div class="ipop" id="pop-measure" aria-hidden="true"><div class="ipn" role="dialog" aria-modal="true" aria-label="첫 방문에 하는 검사"><button class="ix" type="button" data-pclose aria-label="닫기"><svg width="23" height="23" viewBox="0 0 23 23" aria-hidden="true"><line x1="5.7" y1="5.7" x2="17.3" y2="17.3" stroke="#323232"/><line x1="17.3" y1="5.7" x2="5.7" y2="17.3" stroke="#323232"/></svg></button><div class="isc"><p class="ieb">RECOVERY CHECK</p><h3 class="ih">첫 방문에 하는 검사</h3><div class="iimg"><img src="images/qk-blood.jpg" alt="" loading="lazy"></div><p class="itx">혈액·자율신경·체성분 검사와 한의 변증을 <b>한 번에</b> 진행하고,<br>결과는 한 장의 리포트로 설명드립니다.</p><div class="rd-list pm"><div class="rd rv"><small>BLOOD</small><b>혈액</b><p>일반혈액·간·신장 기능, 갑상선(TSH·fT4),<br>코르티솔, 페리틴, 비타민 D,<br>호모시스테인, <span class="nw">hs-CRP</span></p><em class="dev">검사 장비 · 혈액검사기 PT10</em><strong>회복 · 에너지를 읽습니다</strong></div><div class="rd rv"><small>NERVOUS</small><b>자율신경</b><p>심박변이도(HRV) 자율신경 균형 검사,<br>수면 패턴 문진</p><strong>순환의 신호를 읽습니다</strong></div><div class="rd rv"><small>BODY</small><b>몸</b><p>체성분·기초대사량, 혈압·산소포화도</p><em class="dev">검사 장비 · InBody 380<br>(임피던스 체지방측정기)</em><strong>순환 · 에너지를 읽습니다</strong></div><div class="rd rv"><small>CONSTITUTION</small><b>변증</b><p>간울·심화·비허·폐약·신허,<br>다섯 유형으로 피로의 결을 읽습니다</p><strong>세 단계의 체질 배경</strong></div><div class="rd rv last"><small>FOLLOW-UP</small><b>4주 뒤 같은 검사</b><p>1주차와 4주차 같은 항목을 다시 검사해<br>변화를 수치로 확인합니다</p><strong>느낌이 아니라 숫자로 끝냅니다</strong></div></div><p class="fine">* 검사 항목은 진료 후 필요에 따라 달라질 수 있습니다.</p></div></div></div>
@@ -977,15 +1077,18 @@ p,li,dd{text-wrap:pretty}
     <div class="grab"></div>
     <button class="x" type="button" data-close aria-label="닫기">×</button>
     <form id="form">
-      <h3 id="mTitle">상담 예약</h3>
-      <p class="s">코디네이터가 24시간 안에 연락드립니다.</p>
+      <h3 id="mTitle">첫 방문 예약</h3>
+      <p class="s">회당 60~90분 · 검사, 상담, 정맥주사, 약침까지 한 번에</p>
+      <div class="route"><a class="rt nv" href="https://medicalo.aldr.kr/l/ag-hn" target="_blank" rel="noopener"><b>네이버 예약</b><span>날짜·시간 바로 선택</span></a><a class="rt kk" href="https://pf.kakao.com/_xjGnAC" target="_blank" rel="noopener"><b>카카오톡 상담</b><span>궁금한 것부터 물어보기</span></a></div>
+      <p class="or"><span>또는 연락처를 남기면 먼저 연락드려요</span></p>
       <div class="picked" id="picked"></div>
       <div class="field"><label for="fName">이름</label><input id="fName" name="name" required placeholder="이름을 입력해 주세요." autocomplete="name"></div>
       <div class="field"><label for="fTel">휴대폰 번호</label><input id="fTel" name="tel" type="tel" inputmode="numeric" required placeholder="010-0000-0000" autocomplete="tel"></div>
       <div class="field"><label for="fPlan">관심 코스</label><select id="fPlan" name="plan"><option>상담 후 결정</option><option>BASIC</option><option>PREMIUM</option></select></div>
+      <div class="field"><label>편한 시간대</label><div class="tchips"><label><input type="radio" name="slot" value="평일 저녁" checked><span>평일 저녁</span></label><label><input type="radio" name="slot" value="평일 낮"><span>평일 낮</span></label><label><input type="radio" name="slot" value="토요일"><span>토요일</span></label></div></div>
       <input type="hidden" name="context" id="fCtx">
       <label class="agree"><input type="checkbox" required> 개인정보 수집 및 문자·카카오톡 상담 수신에 동의합니다.</label>
-      <button class="btn red" type="submit">상담 신청하기</button>
+      <button class="btn red" type="submit">연락 받기</button>
     </form>
     <div class="done" id="done"><div class="ok"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4L19 7" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></div><b>신청이 접수되었습니다.</b><p>코디네이터가 곧 연락드리겠습니다.</p><button class="btn line" type="button" data-close>닫기</button></div>
   </div>
@@ -1108,6 +1211,7 @@ p,li,dd{text-wrap:pretty}
   $$('.sc-v svg.anim').forEach(function(sv){if(sv.pauseAnimations)sv.pauseAnimations();
     var aio=new IntersectionObserver(function(es){es.forEach(function(e){if(!sv.pauseAnimations)return;e.isIntersecting?sv.unpauseAnimations():sv.pauseAnimations()})},{threshold:.25});aio.observe(sv)});
 
+  var tlF=$('#tlF'),tisF=$$('.ti',tlF||document.createElement('div'));
   /* v2: day map */
   var dw=$('#dwrap'),dss=$$('.ds'),dT=$('#dT'),dL=$('#dL'),dArc=$('#dArc'),dSun=$('#dSun'),darc=$('.darc'),dIdx=-1;
   function dayFx(){if(!dw)return;var vh=innerHeight,line=vh*.58,best=0;
@@ -1146,18 +1250,24 @@ p,li,dd{text-wrap:pretty}
   function onScroll(){ticking=false;var vh=innerHeight,doc=document.documentElement,max=doc.scrollHeight-vh;
     prog.style.transform='scaleX('+(max>0?scrollY/max:0)+')';
     hl.forEach(function(s){s.classList.toggle('on',s.getBoundingClientRect().top<vh*.6)});
-    stackFx();if(tl)lineFill(tl,tis);dayFx();chapFx();
+    stackFx();if(tl)lineFill(tl,tis);if(tlF)lineFill(tlF,tisF);dayFx();chapFx();
     fbar.classList.toggle('show',hero.getBoundingClientRect().bottom<vh*.35 && $('.closing').getBoundingClientRect().top>vh*.6);
   }
   addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
   addEventListener('resize',onScroll);onScroll();
+
+  /* pricing */
+  $$('.pc').forEach(function(pc){var chips=$$('.pc-m button',pc),mo=$('.pc-mo',pc),tot=$('.pc-tot',pc);
+    function setM(m){pc.dataset.sel=m;chips.forEach(function(c){c.classList.toggle('on',c.dataset.m==m)});var t=+pc.dataset['p'+m],per=Math.round(t/m/1000)*1000;
+      mo.textContent=per.toLocaleString('ko-KR');tot.textContent=(m==1?'1개월 ':m+'개월 총 ')+t.toLocaleString('ko-KR')+'원'}
+    chips.forEach(function(c){c.addEventListener('click',function(){setM(+c.dataset.m)})})});
 
   /* sheets */
   var m=$('#modal'),vm=$('#vmodal'),form=$('#form'),done=$('#done'),pk=$('#picked'),vid=$('#vid');
   function openSheet(el){el.classList.add('open');el.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
   function closeSheet(el){el.classList.remove('open');el.setAttribute('aria-hidden','true');document.body.style.overflow='';if(el===vm)vid.pause()}
   function openForm(b){
-    form.style.display='';done.style.display='none';var ctx=b.dataset.ctx,txt='',p='';
+    form.style.display='';done.style.display='none';var ctx=b.dataset.ctx,txt='',p='';if(b.dataset.plan){p=b.dataset.plan;var pcEl=b.closest('.pc');if(pcEl){var mm=pcEl.dataset.sel;txt=p+' · '+$('.pc-tot',pcEl).textContent+(mm==1?'':' (월 '+$('.pc-mo',pcEl).textContent+'원)')}}
     if(ctx==='quiz'&&qState.summary){txt='체크 결과 · '+qState.summary;p=qState.plan}
     pk.textContent=txt;pk.classList.toggle('show',!!txt);$('#fCtx').value=txt;if(p)$('#fPlan').value=p;
     openSheet(m);

@@ -508,6 +508,41 @@ p,li,dd{text-wrap:pretty}
 .rd .dev{display:block;margin:10px 0 0;font-style:normal;font-size:12.5px;line-height:1.5;color:var(--ink);background:var(--soft);border-radius:10px;padding:8px 11px;width:fit-content}
 .rvw-hd b{font-size:15.5px;line-height:1.45}
 .rvw-hd span{display:block;margin-top:4px}
+
+/* ===== pricing ===== */
+.pcs{display:grid;gap:12px;margin-top:28px}
+.pc{position:relative;background:#fff;border-radius:28px;padding:26px 22px 22px}
+.pc.dk{background:#1c1b1a;color:#fff}
+.pc-rec{position:absolute;right:18px;top:20px;font-style:normal;font-family:var(--font);font-size:10.5px;letter-spacing:.12em;color:#fff;background:var(--red);border-radius:999px;padding:5px 10px}
+.pc-k{display:block;font-family:var(--font);font-size:12px;letter-spacing:.08em;color:var(--mute)}
+.pc.dk .pc-k{color:rgba(255,255,255,.55)}
+.pc h3{margin:10px 0 0;font-size:20px;line-height:1.45;font-weight:500;letter-spacing:-.03em}
+.pc-price{display:flex;align-items:baseline;gap:6px;margin-top:18px}
+.pc-price b{font-family:var(--font);font-weight:300;font-size:44px;line-height:1;letter-spacing:-.04em;font-feature-settings:"tnum"}
+.pc-price span{font-size:14px;color:var(--sub)}
+.pc.dk .pc-price span{color:rgba(255,255,255,.65)}
+.pc-sub{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px;color:var(--ink)}
+.pc.dk .pc-sub{color:#fff}
+.pc-sub s{color:var(--mute)}
+.pc.dk .pc-sub s{color:rgba(255,255,255,.45)}
+.pc-m{display:flex;gap:6px;margin-top:16px;flex-wrap:wrap}
+.pc-m button{border:1px solid #e2e2e2;background:#fff;border-radius:999px;height:32px;padding:0 13px;font:inherit;font-size:13px;color:var(--sub);cursor:pointer}
+.pc-m button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.pc.dk .pc-m button{background:transparent;border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.75)}
+.pc.dk .pc-m button.on{background:#fff;border-color:#fff;color:#1c1b1a}
+.pc-list{list-style:none;margin:20px 0 20px;padding:0;border-top:1px solid #ececec}
+.pc.dk .pc-list{border-color:rgba(255,255,255,.14)}
+.pc-list li{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
+.pc.dk .pc-list li{border-color:rgba(255,255,255,.1)}
+.pc-list b{display:block;font-weight:500}
+.pc-list small{display:block;font-size:12px;color:var(--mute);margin-top:2px}
+.pc.dk .pc-list small{color:rgba(255,255,255,.5)}
+.pc-list em{font-style:normal;flex-shrink:0;color:var(--sub)}
+.pc.dk .pc-list em{color:rgba(255,255,255,.75)}
+.pc .btn{width:100%}
+.pc-note{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:6px}
+.pc-note li{position:relative;padding-left:16px;font-size:13px;color:var(--sub);line-height:1.6}
+.pc-note li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--red)}
 </style>
 </head>
 <body>
@@ -844,6 +879,39 @@ p,li,dd{text-wrap:pretty}
     <p class="fine">* 평일 21시(월–목)까지, 토요일 15시까지 진료합니다.</p>
   </section>
 
+  <!-- PRICE -->
+  <section class="blk g" id="price">
+    <p class="eb rv">구독 요금</p>
+    <h2 class="t2 rv">매달 한 세트,<br>두 가지 구독</h2>
+    <p class="tx rv">세 단계를 매달 한 번 돌리는 BASIC,<br>세 단계를 촘촘하게 채우는 PREMIUM.<br>월 요금은 6개월 기준이에요.</p>
+    <div class="pcs rv">
+      <article class="pc" data-sel="6" data-single="700000" data-p1="700000" data-p3="1800000" data-p6="3000000">
+        <small class="pc-k">Recovery Order · Basic</small>
+        <h3>한 달에 한 번,<br>뚫고 채웁니다.</h3>
+        <div class="pc-price"><b class="pc-mo">500,000</b><span>원 / 월</span></div>
+        <p class="pc-sub"><span class="pc-tot">6개월 총 3,000,000원</span><s>단품 합산 월 700,000원</s></p>
+        <div class="pc-m"><button type="button" data-m="1">1개월</button><button type="button" data-m="3">3개월</button><button type="button" data-m="6" class="on">6개월</button></div>
+        <ul class="pc-list"><li><span><b>활성 자가혈 정맥주사</b><small>60cc 채혈 · 30분~1시간 링거</small></span><em>1회</em></li><li><span><b>micro PDRN 약침</b><small>정맥주사와 같은 날</small></span><em>1회</em></li><li><span><b>공진단</b><small>변증 후 복용</small></span><em>1환</em></li><li><span><b>혈액검사 판독 · 순서 리포트</b></span><em>포함</em></li><li><span><b>재검 알림 · 식단 가이드</b><small>카카오톡</small></span><em>포함</em></li></ul>
+        <button class="btn ink" type="button" data-open data-plan="BASIC">BASIC 상담 예약</button>
+      </article>
+      <article class="pc dk" data-sel="6" data-single="1400000" data-p1="1400000" data-p3="3600000" data-p6="6000000" data-p12="10000000">
+        <i class="pc-rec">RECOMMENDED</i><small class="pc-k">Recovery Order · Premium</small>
+        <h3>2주 간격으로 고치고,<br>창고까지 채웁니다.</h3>
+        <div class="pc-price"><b class="pc-mo">1,000,000</b><span>원 / 월</span></div>
+        <p class="pc-sub"><span class="pc-tot">6개월 총 6,000,000원</span><s>단품 합산 월 1,400,000원</s></p>
+        <div class="pc-m"><button type="button" data-m="1">1개월</button><button type="button" data-m="3">3개월</button><button type="button" data-m="6" class="on">6개월</button><button type="button" data-m="12">12개월</button></div>
+        <ul class="pc-list"><li><span><b>활성 자가혈 정맥주사</b><small>60cc 채혈 · 30분~1시간 링거</small></span><em>1회</em></li><li><span><b>micro PDRN 약침</b><small>2주 간격</small></span><em>2회</em></li><li><span><b>공진단</b><small>변증 후 복용 간격 설계</small></span><em>10환</em></li><li><span><b>회복 수액</b><small>진단에 따라 조성</small></span><em>1회</em></li><li><span><b>판독 · 재검 알림 · 식단 가이드</b></span><em>포함</em></li><li><span><b>8주 전후 비교 리포트</b><small>2개월 차부터</small></span><em>포함</em></li></ul>
+        <button class="btn red" type="button" data-open data-plan="PREMIUM">PREMIUM 상담 예약</button>
+      </article>
+    </div>
+    <ul class="pc-note">
+      <li>매월 자동 갱신이 아닌 기간 단위 선결제</li>
+      <li>다음 달 구성은 재검 결과를 보고 함께 결정</li>
+      <li>비급여 항목 · 가격 사전 고지 · 중도 해지 규정 서면 안내</li>
+    </ul>
+    <p class="fine">* 모든 시술·처방은 진료 후 적응증에 따라 결정되며,<br>구성이 조정될 수 있습니다.<br>부가세 포함 여부는 상담 시 안내합니다.</p>
+  </section>
+
   <!-- 10. FAQ -->
   <section class="blk" id="faq">
     <h2 class="t2 rv">자주하는 질문</h2>
@@ -1040,12 +1108,18 @@ p,li,dd{text-wrap:pretty}
   addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
   addEventListener('resize',onScroll);onScroll();
 
+  /* pricing */
+  $$('.pc').forEach(function(pc){var chips=$$('.pc-m button',pc),mo=$('.pc-mo',pc),tot=$('.pc-tot',pc);
+    function setM(m){pc.dataset.sel=m;chips.forEach(function(c){c.classList.toggle('on',c.dataset.m==m)});var t=+pc.dataset['p'+m],per=Math.round(t/m/1000)*1000;
+      mo.textContent=per.toLocaleString('ko-KR');tot.textContent=(m==1?'1개월 ':m+'개월 총 ')+t.toLocaleString('ko-KR')+'원'}
+    chips.forEach(function(c){c.addEventListener('click',function(){setM(+c.dataset.m)})})});
+
   /* sheets */
   var m=$('#modal'),vm=$('#vmodal'),form=$('#form'),done=$('#done'),pk=$('#picked'),vid=$('#vid');
   function openSheet(el){el.classList.add('open');el.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
   function closeSheet(el){el.classList.remove('open');el.setAttribute('aria-hidden','true');document.body.style.overflow='';if(el===vm)vid.pause()}
   function openForm(b){
-    form.style.display='';done.style.display='none';var ctx=b.dataset.ctx,txt='',p='';
+    form.style.display='';done.style.display='none';var ctx=b.dataset.ctx,txt='',p='';if(b.dataset.plan){p=b.dataset.plan;var pcEl=b.closest('.pc');if(pcEl){var mm=pcEl.dataset.sel;txt=p+' · '+$('.pc-tot',pcEl).textContent+(mm==1?'':' (월 '+$('.pc-mo',pcEl).textContent+'원)')}}
     if(ctx==='quiz'&&qState.summary){txt='체크 결과 · '+qState.summary;p=qState.plan}
     pk.textContent=txt;pk.classList.toggle('show',!!txt);$('#fCtx').value=txt;if(p)$('#fPlan').value=p;
     openSheet(m);
